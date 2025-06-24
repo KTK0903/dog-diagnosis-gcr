@@ -30,3 +30,6 @@ steps:
 # 빌드된 이미지를 명시
 images:
 - 'asia-northeast1-docker.pkg.dev/possible-willow-463804-p9/docker-repo/dog-diagnosis-fullstack'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
