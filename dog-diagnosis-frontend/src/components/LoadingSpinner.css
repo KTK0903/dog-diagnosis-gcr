@@ -1,0 +1,38 @@
+/* src/components/LoadingSpinner.css */
+
+.spinner-container {
+    display: flex;
+    flex-direction: column; /* Stack spinner and text vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Add some space around the spinner */
+    min-height: 150px; /* Give it some minimum height */
+  }
+  
+  .loading-spinner {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    border: 6px solid rgba(0, 0, 0, 0.1); /* Light grey track */
+    /* Blue spinner arc color - using a color from App.css */
+    border-top-color: #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Animation properties */
+  }
+  
+  .loading-text {
+      margin-top: 1rem;
+      font-size: 1em;
+      color: #555;
+      font-weight: bold;
+  }
+  
+  
+  /* Keyframes for the rotation animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

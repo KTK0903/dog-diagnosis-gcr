@@ -1,0 +1,390 @@
+{
+  "common": {
+    "language": "Idioma:",
+    "loading": "Cargando...",
+    "submitting": "Enviando...",
+    "analyzing": "Analizando...",
+    "errorPrefix": "Error:",
+    "genericError": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo más tarde.",
+    "apiError": "Fallo al obtener el análisis. Por favor, revise los detalles e inténtelo de nuevo.",
+    "requiredField": "(Requerido)",
+    "selectOption": "Seleccionar...",
+    "yes": "Sí",
+    "no": "No",
+    "notProvided": "No estoy seguro/No proporcionado",
+    "unknown": "Desconocido",
+    "notTriedUnknown": "No probado/Desconocido",
+    "good": "Buena/Efectiva",
+    "partial": "Efecto parcial",
+    "none": "Sin efecto",
+    "resolved": "Resuelto",
+    "improvedRecurred": "Mejoró pero recurrió",
+    "noImprovement": "Sin mejoría",
+    "exampleFrequency": "Ej: Mensual, Cada 3 meses",
+    "exampleDate": "Ej: 25/10/2023, La semana pasada"
+  },
+  "homePage": {
+    "welcome": "Bienvenido al Asistente de Diagnóstico para Mascotas",
+    "description": "Por favor, seleccione el tipo de diagnóstico que necesita o cambie el idioma.",
+    "skinButton": "Iniciar Diagnóstico de Piel",
+    "digestiveButton": "Iniciar Diagnóstico Digestivo"
+  },
+  "disclaimer": {
+    "title": "Aviso Importante:",
+    "line1": "Esta herramienta proporciona sugerencias generadas por IA basadas únicamente en la información que usted proporciona. **NO** sustituye un diagnóstico veterinario profesional.",
+    "line2": "Los síntomas pueden superponerse entre diferentes condiciones, y un examen exhaustivo por un veterinario calificado, incluyendo potencialmente pruebas diagnósticas, es esencial para un diagnóstico preciso y un plan de tratamiento adecuado. Consulte siempre a su veterinario sobre las preocupaciones de salud de su mascota."
+  },
+  "skinDiagnosisPage": {
+    "title": "Cuestionario de Diagnóstico de Piel",
+    "description": "Por favor, responda las siguientes preguntas sobre la condición de la piel de su perro con la mayor precisión posible.",
+    "getAnalysisButton": "Obtener Análisis",
+    "resultsTitle": "Resultados del Análisis (Sugerencias de IA)",
+    "sections": {
+      "basicInfo": "Información Básica",
+      "mainComplaintHistory": "Síntoma Principal e Historial",
+      "itchiness": "Picazón (Prurito)",
+      "lesionCharacteristics": "Características de la Lesión",
+      "environmentManagement": "Entorno y Manejo",
+      "diet": "Dieta",
+      "parasiteControl": "Control de Parásitos",
+      "contagion": "Contagio",
+      "generalHealth": "Salud General",
+      "previousTreatment": "Tratamiento Previo para este Problema"
+    },
+    "labels": {
+      "breed": "Raza:",
+      "age": "Edad:",
+      "sex": "Sexo:",
+      "male": "Macho",
+      "female": "Hembra",
+      "neutered": "¿Castrado/Esterilizada?:",
+      "neuteredOptions": [
+        { "value": "Yes", "label": "Sí" },
+        { "value": "No", "label": "No" },
+        { "value": "Not Provided", "label": "No estoy seguro/No proporcionado" }
+      ],
+      "mainComplaint": "Problema Principal (ej., picazón, caída de pelo, sarpullido):",
+      "firstNoticed": "¿Cuándo notó el problema por primera vez?",
+      "firstNoticedPlaceholder": "ej., hace 2 semanas, el verano pasado",
+      "onsetSpeed": "¿Velocidad de aparición?:",
+      "onsetSpeedOptions": [
+        { "value": "Sudden", "label": "Repentina" },
+        { "value": "Gradual", "label": "Gradual" }
+      ],
+      "initialLocation": "¿En qué parte del cuerpo comenzó?",
+      "currentLocation": "¿Dónde se localizan los síntomas actualmente?",
+      "spread": "¿Se ha extendido a otras áreas?",
+      "symmetry": "¿Las áreas afectadas son simétricas?",
+      "symmetryOptions": [
+        { "value": "Yes", "label": "Sí (Simétricas)" },
+        { "value": "No", "label": "No (Asimétricas)" }
+      ],
+      "previousIssues": "¿Ha tenido problemas de piel similares anteriormente?",
+      "seasonality": "¿Parece ser estacional?",
+      "progress": "Progreso general:",
+      "progressOptions": [
+        { "value": "Worsening", "label": "Empeorando" },
+        { "value": "Stable", "label": "Estable" },
+        { "value": "Improving", "label": "Mejorando" }
+      ],
+      "isItchy": "¿El perro tiene picazón?",
+      "pruritusScore": "Puntuación de Picazón (1=Nada, 10=Severa, constante):",
+      "itchMethod": "¿Cómo muestra el perro la picazón? (Seleccione todas las que apliquen)",
+      "itchMethodOptions": [
+        { "value": "Scratching (Paws)", "label": "Rascarse (con patas)" },
+        { "value": "Licking", "label": "Lamerse" },
+        { "value": "Chewing/Biting", "label": "Morder/Masticar" },
+        { "value": "Rubbing on surfaces", "label": "Frotarse contra superficies" },
+        { "value": "Shaking head", "label": "Sacudir la cabeza" }
+      ],
+      "itchLocation": "¿Dónde se rasca más el perro?",
+      "itchLesionOnset": "¿Qué empezó primero, la picazón o las lesiones en la piel?",
+      "itchLesionOnsetOptions": [
+        { "value": "Itch First", "label": "La picazón empezó primero" },
+        { "value": "Lesions First", "label": "Los cambios en la piel aparecieron primero" },
+        { "value": "Same Time", "label": "Ambos empezaron al mismo tiempo" },
+        { "value": "Not Sure", "label": "No estoy seguro" }
+      ],
+      "pastItchMedication": "Respuesta a medicación previa para la picazón (si se probó):",
+      "steroids": "Esteroides (ej., Prednisona)",
+      "apoquelCytopoint": "Apoquel / Cytopoint",
+      "responseOptions": [
+        { "value": "Good", "label": "Buena/Efectiva" },
+        { "value": "Partial", "label": "Efecto parcial" },
+        { "value": "None", "label": "Sin efecto" },
+        { "value": "Unknown", "label": "No probado/Desconocido" }
+      ],
+      "lesionTypes": "¿Cómo se ven las lesiones de la piel? (Seleccione todas las que apliquen)",
+      "lesionTypeOptions": [
+        { "value": "Redness (Erythema)", "label": "Enrojecimiento (Eritema)" },
+        { "value": "Bumps (Papules)", "label": "Bultos (Pápulas)" },
+        { "value": "Pimples/Pustules", "label": "Granos/Pústulas" },
+        { "value": "Hair Loss (Alopecia)", "label": "Caída de Pelo (Alopecia)" },
+        { "value": "Scales/Dandruff", "label": "Escamas/Caspa" },
+        { "value": "Crusts/Scabs", "label": "Costras" },
+        { "value": "Thickened Skin (Lichenification)", "label": "Piel Engrosada (Liquenificación)" },
+        { "value": "Darkened Skin (Hyperpigmentation)", "label": "Piel Oscurecida (Hiperpigmentación)" },
+        { "value": "Sores/Ulcers", "label": "Llagas/Úlceras" },
+        { "value": "Greasy Skin/Coat", "label": "Piel/Pelaje Grasiento" },
+        { "value": "Lumps/Masses", "label": "Bultos/Masas" },
+        { "value": "Circular Lesions (Ringworm-like)", "label": "Lesiones Circulares (Tipo tiña)" }
+      ],
+      "skinTexture": "Describa la textura de la piel si es inusual (ej., seca, grasa, rugosa):",
+      "odor": "¿Hay un olor inusual en la piel?",
+      "indoorOutdoor": "Área principal de vivienda:",
+      "indoorOutdoorOptions": [
+        { "value": "Indoor", "label": "Interior" },
+        { "value": "Outdoor", "label": "Exterior" },
+        { "value": "Both", "label": "Ambos Interior/Exterior" }
+      ],
+      "walkEnvironment": "Superficies típicas para caminar/ejercicio (ej., césped, pavimento, tierra):",
+      "envChanges": "¿Hubo cambios recientes en el entorno (nuevo hogar, nuevos detergentes, nuevos muebles/alfombras)?",
+      "groomingFreq": "Frecuencia de aseo/baño:",
+      "shampoo": "Champú/Acondicionador utilizado:",
+      "bedding": "Tipo de material de la cama y frecuencia de limpieza:",
+      "contactIrritants": "¿Posible contacto con irritantes (plantas, químicos, materiales)?",
+      "yesNoPossiblyOptions": [
+        { "value": "Yes", "label": "Sí" },
+        { "value": "No", "label": "No" },
+        { "value": "Possibly", "label": "Posiblemente/No estoy seguro" }
+      ],
+      "mainFood": "Alimento principal actual (Marca y Nombre del producto):",
+      "foodSince": "¿Cuánto tiempo lleva con este alimento principal?",
+      "foodSincePlaceholder": "ej., 6 meses, desde cachorro",
+      "treats": "Premios, comida humana, masticables, suplementos (Liste todos):",
+      "dietChange": "¿Algún alimento/premio nuevo en los últimos 1-2 meses?",
+      "rxDietTrial": "¿Ha probado una dieta de prescripción/eliminación antes?",
+      "giSymptoms": "¿Vómitos o diarrea concurrentes?",
+      "parasiteControlActive": "¿Usa prevención regular contra pulgas/garrapatas/ácaros?",
+      "parasiteProduct": "Nombre del producto(s) de prevención:",
+      "parasiteFrequency": "¿Con qué frecuencia se aplica/administra?",
+      "parasiteLastDate": "Fecha de la última aplicación/dosis:",
+      "fleaTickSeen": "¿Ha visto pulgas o garrapatas en el perro o en el entorno recientemente?",
+      "otherPetsAffected": "¿Hay otras mascotas en el hogar mostrando signos similares?",
+      "humansAffected": "¿Hay alguna persona en el hogar experimentando nuevos problemas de piel (sarpullido, picazón)?",
+      "otherSymptoms": "¿Algún otro síntoma (letargo, cambio de apetito, aumento de sed/orina, tos, cojera)?",
+      "preexistingConditions": "¿Alguna condición de salud preexistente conocida (ej., alergias, problemas de tiroides, Cushing)?",
+      "currentMeds": "¿Toma actualmente algún medicamento o suplemento (aparte de la prevención de parásitos)?",
+      "vaccinationStatus": "Estado de vacunación:",
+      "vaccinationOptions": [
+        { "value": "Up to date", "label": "Al día" },
+        { "value": "Overdue", "label": "Vencida" },
+        { "value": "Unknown", "label": "Desconocido" }
+      ],
+      "prevVetVisit": "¿Ha visitado al veterinario por este problema específico de piel anteriormente?",
+      "prevTests": "Pruebas realizadas previamente para este problema de piel:",
+      "prevTestsPlaceholder": "ej., Raspado de piel, citología, cultivo, biopsia, prueba de alergia",
+      "prevTreatments": "Tratamientos probados previamente para este problema de piel:",
+      "prevTreatmentsPlaceholder": "ej., Antibióticos, antifúngicos, esteroides, champús especiales, cambio de dieta",
+      "prevResponse": "Respuesta al tratamiento previo:",
+      "prevResponseOptions": [
+        { "value": "Good", "label": "Resuelto" },
+        { "value": "Partial", "label": "Mejoró pero recurrió" },
+        { "value": "None", "label": "Sin mejoría" },
+        { "value": "Unknown", "label": "Desconocido" }
+      ],
+      "yesNoOptions": [ 
+        { "value": "Yes", "label": "Sí" },
+        { "value": "No", "label": "No" }
+      ]
+    }
+  },
+  "digestiveDiagnosisPage": {
+    "title": "Cuestionario de Trastorno Digestivo",
+    "description": "Por favor, responda las siguientes preguntas sobre los síntomas digestivos de su perro con la mayor precisión posible.",
+    "getAnalysisButton": "Obtener Análisis",
+    "resultsTitle": "Resultados del Análisis (Sugerencias de IA)",
+    "sections": {
+      "basicInfo": "Información Básica",
+      "mainComplaintHistory": "Síntoma Principal e Historial",
+      "diet": "Dieta (Muy importante)",
+      "vomiting": "Vómitos",
+      "diarrhea": "Diarrea",
+      "appetiteThirst": "Apetito y Sed",
+      "otherGISymptoms": "Otros Síntomas Digestivos",
+      "generalCondition": "Condición General",
+      "environmentManagement": "Entorno y Manejo",
+      "previousTreatment": "Tratamiento Previo para este Problema"
+    },
+    "labels": {
+      "breed": "Raza:",
+      "age": "Edad:",
+      "sex": "Sexo:",
+      "male": "Macho",
+      "female": "Hembra",
+      "neutered": "¿Castrado/Esterilizada?:",
+      "neuteredOptions": [
+        { "value": "Yes", "label": "Sí" },
+        { "value": "No", "label": "No" },
+        { "value": "Not Provided", "label": "No estoy seguro/No proporcionado" }
+      ],
+      "weightInfo": "Peso actual y cambios recientes:",
+      "weightInfoPlaceholder": "ej., 10kg, perdió 1kg el último mes",
+      "mainComplaint": "Problema Principal (ej., Vómitos, Diarrea, No come):",
+      "firstNoticed": "¿Cuándo notó el problema por primera vez?",
+      "firstNoticedPlaceholder": "ej., hace 3 días, ayer por la mañana",
+      "onsetSpeed": "¿Velocidad de aparición?:",
+      "onsetSpeedOptions": [
+         { "value": "Sudden", "label": "Repentina (Aguda)" },
+         { "value": "Gradual", "label": "Gradual (Crónica)" }
+      ],
+      "symptomPattern": "Patrón de los síntomas:",
+      "symptomPatternOptions": [
+        { "value": "Continuous", "label": "Continuo" },
+        { "value": "Intermittent", "label": "Intermitente (Aparece y desaparece)" }
+      ],
+      "progress": "Progreso general:",
+      "progressOptions": [
+        { "value": "Worsening", "label": "Empeorando" },
+        { "value": "Stable", "label": "Estable" },
+        { "value": "Improving", "label": "Mejorando" }
+      ],
+      "previousIssues": "¿Ha tenido problemas digestivos similares anteriormente?",
+      "mainFood": "Alimento principal actual (Marca y Nombre del producto):",
+      "foodSince": "¿Cuánto tiempo lleva con este alimento principal?",
+      "foodSincePlaceholder": "ej., 6 meses, desde cachorro",
+      "treats": "Premios, comida humana, masticables, suplementos (Liste todos):",
+      "dietChange": "¿Algún alimento/premio nuevo en las últimas 1-2 semanas?",
+      "eatingHabits": "Hábitos alimenticios típicos:",
+      "eatingHabitsOptions": [
+        { "value": "Normal", "label": "Normal" },
+        { "value": "Voracious", "label": "Voraz (Come rápido/mucho)" },
+        { "value": "Picky", "label": "Exigente / Come poco" }
+      ],
+      "scavenging": "¿El perro hurga en la basura o come cosas del suelo?",
+      "toyIngestion": "¿Podría el perro haber tragado parte de un juguete u objeto extraño?",
+      "toxinExposure": "¿Podría el perro haber ingerido toxinas potenciales (plantas, químicos, medicamentos humanos)?",
+      "yesNoPossiblyOptions": [
+        { "value": "Yes", "label": "Sí" },
+        { "value": "No", "label": "No" },
+        { "value": "Possibly", "label": "Posiblemente/No estoy seguro" }
+      ],
+      "isVomiting": "¿El perro está vomitando?",
+      "vomitFrequency": "¿Con qué frecuencia vomita el perro?",
+      "vomitFrequencyPlaceholder": "ej., dos veces hoy, una vez cada pocos días",
+      "vomitTiming": "¿Cuándo ocurre típicamente el vómito?",
+      "vomitTimingOptions": [
+         { "value": "Soon after eating", "label": "Poco después de comer" },
+         { "value": "Hours after eating", "label": "Horas después de comer" },
+         { "value": "Empty stomach (e.g., morning)", "label": "Con el estómago vacío (ej., por la mañana)" },
+         { "value": "Variable", "label": "Variable / Sin patrón" }
+      ],
+      "vomitContents": "¿Qué contiene el vómito? (Seleccione todas las que apliquen)",
+      "vomitContentsOptions": [
+        { "value": "Undigested food", "label": "Comida sin digerir" },
+        { "value": "Partially digested food", "label": "Comida parcialmente digerida" },
+        { "value": "Clear liquid/Saliva", "label": "Líquido claro/Saliva" },
+        { "value": "Yellow liquid (Bile)", "label": "Líquido amarillo (Bilis)" },
+        { "value": "White foam", "label": "Espuma blanca" },
+        { "value": "Bright red blood", "label": "Sangre roja brillante" },
+        { "value": "Dark blood (Coffee grounds)", "label": "Sangre oscura (posos de café)" },
+        { "value": "Foreign material", "label": "Material extraño" }
+      ],
+      "vomitEffort": "¿Parece que el perro hace esfuerzo al vomitar (arcadas)?",
+      "vomitEffortOptions": [
+        { "value": "Yes", "label": "Sí (Arcadas/Esfuerzo abdominal)" },
+        { "value": "No", "label": "No (Parece sin esfuerzo - Regurgitación)" }
+      ],
+      "isDiarrhea": "¿El perro tiene diarrea?",
+      "diarrheaFrequency": "¿Cuántas veces al día tiene diarrea el perro?",
+      "diarrheaFrequencyPlaceholder": "ej., 5 veces hoy, 3 veces al día durante 2 días",
+      "diarrheaConsistency": "¿Cómo es la diarrea? (Seleccione todas las que apliquen)",
+      "diarrheaConsistencyOptions": [
+        { "value": "Watery", "label": "Acuosa" },
+        { "value": "Pasty / Porridge-like", "label": "Pastosa / Como puré" },
+        { "value": "Mucus present", "label": "Con moco" },
+        { "value": "Bright red blood", "label": "Sangre roja brillante (Hematoquecia)" },
+        { "value": "Black / Tarry stool", "label": "Heces negras / Alquitranadas (Melena)" },
+        { "value": "Greasy / Oily", "label": "Grasienta / Aceitosa" },
+        { "value": "Unusual color (grey, green)", "label": "Color inusual (gris, verde)" }
+      ],
+      "diarrheaStraining": "¿El perro hace esfuerzo al defecar (tenesmo)?",
+      "diarrheaAccidents": "¿Tiene accidentes en casa?",
+      "diarrheaOdor": "¿El olor es inusualmente fétido?",
+      "diarrheaOdorOptions": [
+         { "value": "Normal", "label": "Normal" },
+         { "value": "Very Foul", "label": "Mucho peor de lo habitual" }
+      ],
+      "appetite": "¿Apetito actual?",
+      "appetiteOptions": [
+        { "value": "Normal", "label": "Normal" },
+        { "value": "Decreased", "label": "Disminuido" },
+        { "value": "Absent", "label": "Ausente (No come)" },
+        { "value": "Increased", "label": "Aumentado" }
+      ],
+      "thirst": "¿Ingesta de agua?",
+      "thirstOptions": [
+        { "value": "Normal", "label": "Normal" },
+        { "value": "Increased", "label": "Aumentada (Bebe más)" },
+        { "value": "Decreased", "label": "Disminuida (Bebe menos)" }
+      ],
+      "borborygmi": "¿Sonidos intestinales fuertes (Borborigmos)?",
+      "borborygmiOptions": [
+         { "value": "Yes", "label": "Sí (Fuertes/Frecuentes)" },
+         { "value": "No", "label": "No / Normal" }
+      ],
+      "abdominalPain": "¿Signos de dolor abdominal?",
+      "abdominalPainOptions": [
+        { "value": "Yes", "label": "Sí (Sensible al tacto, encorvado, postura de rezo)" },
+        { "value": "No", "label": "No" },
+        { "value": "Not Sure", "label": "No estoy seguro" }
+      ],
+      "flatulence": "¿Aumento de gases (Flatulencia)?",
+      "flatulenceOptions": [
+        { "value": "Yes", "label": "Sí (Más de lo habitual)" },
+        { "value": "No", "label": "No / Normal" }
+      ],
+      "lipSmackingDrooling": "¿Aumento de relamido o babeo?",
+      "lethargy": "¿El perro está letárgico?",
+      "lethargyOptions": [
+        { "value": "Yes", "label": "Sí (Menos energía, duerme más)" },
+        { "value": "No", "label": "No (Energía normal)" }
+      ],
+      "fever": "¿Parece que el perro tiene fiebre?",
+      "feverOptions": [
+         { "value": "Yes", "label": "Sí (Se siente caliente)" },
+         { "value": "No", "label": "No" },
+         { "value": "Not Sure", "label": "No estoy seguro" }
+      ],
+      "gumColor": "Color de las encías:",
+      "gumColorOptions": [
+        { "value": "Pink", "label": "Rosadas (Normal)" },
+        { "value": "Pale", "label": "Pálidas / Blancas" },
+        { "value": "Yellow", "label": "Amarillas (Ictericia)" },
+        { "value": "Purple/Blue", "label": "Moradas/Azuladas (Cianosis)" },
+        { "value": "Not Sure", "label": "No estoy seguro" }
+      ],
+      "dewormingStatus": "Estado de desparasitación (Parásitos internos):",
+      "dewormingPlaceholder": "ej., Sí, el mes pasado con Drontal; No",
+      "vaccinationStatus": "Estado de vacunación (esp. Parvo/Moquillo):",
+      "vaccinationOptions": [
+        { "value": "Up to date", "label": "Al día" },
+        { "value": "Overdue", "label": "Vencida" },
+        { "value": "Unknown", "label": "Desconocido" }
+      ],
+      "recentStress": "¿Algún evento estresante reciente (guardería, mudanza, nueva mascota)?",
+      "otherPetsAffected": "¿Hay otras mascotas en el hogar mostrando signos similares?",
+      "prevVetVisit": "¿Ha visitado al veterinario por este problema específico anteriormente?",
+      "prevTests": "Pruebas realizadas previamente:",
+      "prevTestsPlaceholder": "ej., Rayos X, análisis de sangre, examen fecal",
+      "prevTreatments": "Tratamientos probados previamente:",
+      "prevTreatmentsPlaceholder": "ej., Medicamentos (nombre si se conoce), fluidoterapia, cambio de dieta",
+      "prevResponse": "Respuesta al tratamiento previo:",
+      "prevResponseOptions": [
+        { "value": "Good", "label": "Resuelto" },
+        { "value": "Partial", "label": "Mejoró pero recurrió" },
+        { "value": "None", "label": "Sin mejoría" },
+        { "value": "Unknown", "label": "Desconocido" }
+      ],
+      "yesNoOptions": [ 
+        { "value": "Yes", "label": "Sí" },
+        { "value": "No", "label": "No" }
+      ]
+    }
+  },
+  "notFoundPage": {
+    "title": "404 - Página No Encontrada",
+    "message": "La página que busca no existe.",
+    "goHome": "Ir a la Página Principal"
+  }
+}

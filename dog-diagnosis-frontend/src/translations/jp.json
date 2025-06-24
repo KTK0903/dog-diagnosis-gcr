@@ -1,0 +1,390 @@
+{
+  "common": {
+    "language": "言語:",
+    "loading": "読み込み中...",
+    "submitting": "送信中...",
+    "analyzing": "分析中...",
+    "errorPrefix": "エラー:",
+    "genericError": "予期せぬエラーが発生しました。しばらくしてからもう一度お試しください。",
+    "apiError": "分析結果の取得に失敗しました。入力内容を確認してからもう一度お試しください。",
+    "requiredField": "(必須)",
+    "selectOption": "選択...",
+    "yes": "はい",
+    "no": "いいえ",
+    "notProvided": "不明/未提供",
+    "unknown": "不明",
+    "notTriedUnknown": "未試行/不明",
+    "good": "良好/効果あり",
+    "partial": "部分的効果",
+    "none": "効果なし",
+    "resolved": "解決済み",
+    "improvedRecurred": "改善したが再発",
+    "noImprovement": "改善なし",
+    "exampleFrequency": "例: 毎月, 3ヶ月毎",
+    "exampleDate": "例: 2023-10-25, 先週"
+  },
+  "homePage": {
+    "welcome": "ペット診断ヘルパーへようこそ",
+    "description": "必要な診断の種類を選択するか、言語を変更してください。",
+    "skinButton": "皮膚疾患診断を開始",
+    "digestiveButton": "消化器疾患診断を開始"
+  },
+  "disclaimer": {
+    "title": "重要事項:",
+    "line1": "このツールは、提供された情報のみに基づいてAIが生成した提案を提供します。これは専門的な獣医学的診断に代わるものでは**ありません**。",
+    "line2": "症状は異なる病状間で重複することがあり、正確な診断と適切な治療計画のためには、資格のある獣医師による徹底的な診察と、場合によっては診断検査が不可欠です。ペットの健康に関する懸念については、必ず獣医師にご相談ください。"
+  },
+  "skinDiagnosisPage": {
+    "title": "皮膚疾患 質問票",
+    "description": "愛犬の皮膚の状態に関する以下の質問に、できるだけ正確にお答えください。",
+    "getAnalysisButton": "分析結果を見る",
+    "resultsTitle": "分析結果 (AIによる提案)",
+    "sections": {
+      "basicInfo": "基本情報",
+      "mainComplaintHistory": "主な症状と病歴",
+      "itchiness": "かゆみ (瘙痒感)",
+      "lesionCharacteristics": "病変の特徴",
+      "environmentManagement": "環境と管理",
+      "diet": "食事",
+      "parasiteControl": "寄生虫管理",
+      "contagion": "伝染性",
+      "generalHealth": "全身の健康状態",
+      "previousTreatment": "この問題に関する以前の治療経験"
+    },
+    "labels": {
+      "breed": "犬種:",
+      "age": "年齢:",
+      "sex": "性別:",
+      "male": "オス",
+      "female": "メス",
+      "neutered": "避妊/去勢:",
+      "neuteredOptions": [
+        { "value": "Yes", "label": "はい" },
+        { "value": "No", "label": "いいえ" },
+        { "value": "Not Provided", "label": "不明/未提供" }
+      ],
+      "mainComplaint": "主な問題 (例: かゆみ、脱毛、発疹):",
+      "firstNoticed": "最初に問題に気づいたのはいつですか？",
+      "firstNoticedPlaceholder": "例: 2週間前、去年の夏",
+      "onsetSpeed": "発症の速度:",
+      "onsetSpeedOptions": [
+        { "value": "Sudden", "label": "突然" },
+        { "value": "Gradual", "label": "徐々に" }
+      ],
+      "initialLocation": "体のどの部位から始まりましたか？",
+      "currentLocation": "現在、症状がある部位はどこですか？",
+      "spread": "他の部位に広がりましたか？",
+      "symmetry": "症状のある部位は左右対称ですか？",
+      "symmetryOptions": [
+        { "value": "Yes", "label": "はい (対称)" },
+        { "value": "No", "label": "いいえ (非対称)" }
+      ],
+      "previousIssues": "以前に同様の皮膚の問題がありましたか？",
+      "seasonality": "季節性があるように思われますか？",
+      "progress": "全体的な経過:",
+      "progressOptions": [
+        { "value": "Worsening", "label": "悪化" },
+        { "value": "Stable", "label": "安定" },
+        { "value": "Improving", "label": "改善" }
+      ],
+      "isItchy": "犬はかゆがっていますか？",
+      "pruritusScore": "かゆみのスコア (1=全くなし, 10=重度、持続的):",
+      "itchMethod": "犬はどのようにかゆみを示しますか？ (すべて選択)",
+      "itchMethodOptions": [
+        { "value": "Scratching (Paws)", "label": "掻く (足を使う)" },
+        { "value": "Licking", "label": "舐める" },
+        { "value": "Chewing/Biting", "label": "噛む/齧る" },
+        { "value": "Rubbing on surfaces", "label": "表面にこすりつける" },
+        { "value": "Shaking head", "label": "頭を振る" }
+      ],
+      "itchLocation": "主にどこをかゆがりますか？",
+      "itchLesionOnset": "かゆみと皮膚の病変、どちらが先に始まりましたか？",
+      "itchLesionOnsetOptions": [
+        { "value": "Itch First", "label": "かゆみが先に始まった" },
+        { "value": "Lesions First", "label": "皮膚の変化が先に現れた" },
+        { "value": "Same Time", "label": "両方が同時に始まった" },
+        { "value": "Not Sure", "label": "不明" }
+      ],
+      "pastItchMedication": "過去のかゆみ止め薬への反応 (使用した場合):",
+      "steroids": "ステロイド (例: プレドニゾロン)",
+      "apoquelCytopoint": "アポキル / サイトポイント",
+      "responseOptions": [
+        { "value": "Good", "label": "良好/効果あり" },
+        { "value": "Partial", "label": "部分的効果" },
+        { "value": "None", "label": "効果なし" },
+        { "value": "Unknown", "label": "未試行/不明" }
+      ],
+      "lesionTypes": "皮膚の病変はどのように見えますか？ (すべて選択)",
+      "lesionTypeOptions": [
+        { "value": "Redness (Erythema)", "label": "赤み (紅斑)" },
+        { "value": "Bumps (Papules)", "label": "ぶつぶつ (丘疹)" },
+        { "value": "Pimples/Pustules", "label": "にきび/膿疱" },
+        { "value": "Hair Loss (Alopecia)", "label": "脱毛" },
+        { "value": "Scales/Dandruff", "label": "鱗屑/フケ" },
+        { "value": "Crusts/Scabs", "label": "かさぶた" },
+        { "value": "Thickened Skin (Lichenification)", "label": "皮膚の肥厚 (苔癬化)" },
+        { "value": "Darkened Skin (Hyperpigmentation)", "label": "皮膚の色素沈着" },
+        { "value": "Sores/Ulcers", "label": "ただれ/潰瘍" },
+        { "value": "Greasy Skin/Coat", "label": "脂っぽい皮膚/被毛" },
+        { "value": "Lumps/Masses", "label": "しこり/腫瘤" },
+        { "value": "Circular Lesions (Ringworm-like)", "label": "円形脱毛 (白癬様)" }
+      ],
+      "skinTexture": "皮膚の質感が通常と異なる場合、説明してください (例: 乾燥、脂っぽい、ざらざら):",
+      "odor": "皮膚から異常な臭いがしますか？",
+      "indoorOutdoor": "主な生活場所:",
+      "indoorOutdoorOptions": [
+        { "value": "Indoor", "label": "室内" },
+        { "value": "Outdoor", "label": "室外" },
+        { "value": "Both", "label": "室内外両方" }
+      ],
+      "walkEnvironment": "主な散歩/運動場所 (例: 草地、舗装路、土):",
+      "envChanges": "最近、環境の変化 (引っ越し、新しい洗剤、新しい家具/カーペットなど) がありましたか？",
+      "groomingFreq": "グルーミング/入浴の頻度:",
+      "shampoo": "使用しているシャンプー/コンディショナー:",
+      "bedding": "寝具の種類と洗濯頻度:",
+      "contactIrritants": "刺激物 (植物、化学物質、特定の素材など) との接触の可能性はありますか？",
+      "yesNoPossiblyOptions": [
+        { "value": "Yes", "label": "はい" },
+        { "value": "No", "label": "いいえ" },
+        { "value": "Possibly", "label": "可能性あり/不明" }
+      ],
+      "mainFood": "現在の主食 (ブランドと製品名):",
+      "foodSince": "この主食にしてどのくらい経ちますか？",
+      "foodSincePlaceholder": "例: 6ヶ月、子犬の頃から",
+      "treats": "おやつ、人間の食べ物、ガム、サプリメント (すべて記載):",
+      "dietChange": "過去1～2ヶ月以内に新しい食べ物/おやつを与えましたか？",
+      "rxDietTrial": "以前に処方食/除去食試験を試しましたか？",
+      "giSymptoms": "同時に嘔吐や下痢はありますか？",
+      "parasiteControlActive": "定期的な外部寄生虫 (ノミ/ダニ/疥癬) の予防をしていますか？",
+      "parasiteProduct": "使用している予防薬の製品名:",
+      "parasiteFrequency": "どのくらいの頻度で投与/塗布していますか？",
+      "parasiteLastDate": "最終投与/塗布日:",
+      "fleaTickSeen": "最近、犬や環境でノミやダニを見ましたか？",
+      "otherPetsAffected": "同居している他のペットに同様の症状はありますか？",
+      "humansAffected": "同居している人に最近、新しい皮膚の問題 (発疹、かゆみ) が発生しましたか？",
+      "otherSymptoms": "他の症状 (元気消失、食欲不振、多飲多尿、咳、跛行など) はありますか？",
+      "preexistingConditions": "既往症 (アレルギー、甲状腺疾患、クッシング症候群など) はありますか？",
+      "currentMeds": "現在服用中の薬やサプリメント (寄生虫予防薬を除く) はありますか？",
+      "vaccinationStatus": "ワクチン接種状況:",
+      "vaccinationOptions": [
+        { "value": "Up to date", "label": "最新の状態" },
+        { "value": "Overdue", "label": "期限切れ" },
+        { "value": "Unknown", "label": "不明" }
+      ],
+      "prevVetVisit": "以前にこの皮膚の問題で獣医師の診察を受けましたか？",
+      "prevTests": "以前にこの皮膚の問題で行われた検査:",
+      "prevTestsPlaceholder": "例: 皮膚掻爬検査、細胞診、培養検査、生検、アレルギー検査",
+      "prevTreatments": "以前にこの皮膚の問題で試した治療:",
+      "prevTreatmentsPlaceholder": "例: 抗生物質、抗真菌薬、ステロイド、薬用シャンプー、食事変更",
+      "prevResponse": "以前の治療への反応:",
+      "prevResponseOptions": [
+        { "value": "Good", "label": "解決済み" },
+        { "value": "Partial", "label": "改善したが再発" },
+        { "value": "None", "label": "改善なし" },
+        { "value": "Unknown", "label": "不明" }
+      ],
+      "yesNoOptions": [
+        { "value": "Yes", "label": "はい" },
+        { "value": "No", "label": "いいえ" }
+      ]
+    }
+  },
+  "digestiveDiagnosisPage": {
+    "title": "消化器疾患 質問票",
+    "description": "愛犬の消化器症状に関する以下の質問に、できるだけ正確にお答えください。",
+    "getAnalysisButton": "分析結果を見る",
+    "resultsTitle": "分析結果 (AIによる提案)",
+    "sections": {
+      "basicInfo": "基本情報",
+      "mainComplaintHistory": "主な症状と病歴",
+      "diet": "食事 (非常に重要)",
+      "vomiting": "嘔吐",
+      "diarrhea": "下痢",
+      "appetiteThirst": "食欲と飲水量",
+      "otherGISymptoms": "その他の消化器症状",
+      "generalCondition": "全身状態",
+      "environmentManagement": "環境と管理",
+      "previousTreatment": "この問題に関する以前の治療経験"
+    },
+    "labels": {
+      "breed": "犬種:",
+      "age": "年齢:",
+      "sex": "性別:",
+      "male": "オス",
+      "female": "メス",
+      "neutered": "避妊/去勢:",
+      "neuteredOptions": [
+        { "value": "Yes", "label": "はい" },
+        { "value": "No", "label": "いいえ" },
+        { "value": "Not Provided", "label": "不明/未提供" }
+      ],
+      "weightInfo": "現在の体重と最近の変化:",
+      "weightInfoPlaceholder": "例: 10kg、過去1ヶ月で1kg減少",
+      "mainComplaint": "主な問題 (例: 嘔吐、下痢、食欲不振):",
+      "firstNoticed": "最初に問題に気づいたのはいつですか？",
+      "firstNoticedPlaceholder": "例: 3日前、昨日の朝",
+      "onsetSpeed": "発症の速度:",
+      "onsetSpeedOptions": [
+         { "value": "Sudden", "label": "突然 (急性)" },
+         { "value": "Gradual", "label": "徐々に (慢性)" }
+      ],
+      "symptomPattern": "症状のパターン:",
+      "symptomPatternOptions": [
+        { "value": "Continuous", "label": "持続的" },
+        { "value": "Intermittent", "label": "断続的 (現れたり消えたり)" }
+      ],
+      "progress": "全体的な経過:",
+      "progressOptions": [
+        { "value": "Worsening", "label": "悪化" },
+        { "value": "Stable", "label": "安定" },
+        { "value": "Improving", "label": "改善" }
+      ],
+      "previousIssues": "以前に同様の消化器の問題がありましたか？",
+      "mainFood": "現在の主食 (ブランドと製品名):",
+      "foodSince": "この主食にしてどのくらい経ちますか？",
+      "foodSincePlaceholder": "例: 6ヶ月、子犬の頃から",
+      "treats": "おやつ、人間の食べ物、ガム、サプリメント (すべて記載):",
+      "dietChange": "過去1～2週間以内に新しい食べ物/おやつを与えましたか？",
+      "eatingHabits": "通常の食習慣:",
+      "eatingHabitsOptions": [
+        { "value": "Normal", "label": "普通" },
+        { "value": "Voracious", "label": "食欲旺盛 (早く/たくさん食べる)" },
+        { "value": "Picky", "label": "偏食/小食" }
+      ],
+      "scavenging": "犬は拾い食い (ゴミ箱、地面のもの) をしますか？",
+      "toyIngestion": "おもちゃの一部や異物を飲み込んだ可能性はありますか？",
+      "toxinExposure": "毒性のあるもの (植物、化学物質、人間の薬など) を摂取した可能性はありますか？",
+      "yesNoPossiblyOptions": [
+        { "value": "Yes", "label": "はい" },
+        { "value": "No", "label": "いいえ" },
+        { "value": "Possibly", "label": "可能性あり/不明" }
+      ],
+      "isVomiting": "犬は嘔吐していますか？",
+      "vomitFrequency": "どのくらいの頻度で嘔吐しますか？",
+      "vomitFrequencyPlaceholder": "例: 今日2回、数日に1回",
+      "vomitTiming": "通常いつ嘔吐しますか？",
+      "vomitTimingOptions": [
+         { "value": "Soon after eating", "label": "食後すぐ" },
+         { "value": "Hours after eating", "label": "食後数時間" },
+         { "value": "Empty stomach (e.g., morning)", "label": "空腹時 (例: 朝)" },
+         { "value": "Variable", "label": "様々/パターンなし" }
+      ],
+      "vomitContents": "嘔吐物には何が含まれていますか？ (すべて選択)",
+      "vomitContentsOptions": [
+        { "value": "Undigested food", "label": "未消化の食べ物" },
+        { "value": "Partially digested food", "label": "部分的に消化された食べ物" },
+        { "value": "Clear liquid/Saliva", "label": "透明な液体/唾液" },
+        { "value": "Yellow liquid (Bile)", "label": "黄色い液体 (胆汁)" },
+        { "value": "White foam", "label": "白い泡" },
+        { "value": "Bright red blood", "label": "鮮血" },
+        { "value": "Dark blood (Coffee grounds)", "label": "黒っぽい血 (コーヒーかす様)" },
+        { "value": "Foreign material", "label": "異物" }
+      ],
+      "vomitEffort": "嘔吐するときに苦しそうな様子 (吐き気/腹部の収縮) はありますか？",
+      "vomitEffortOptions": [
+        { "value": "Yes", "label": "はい (苦しそう)" },
+        { "value": "No", "label": "いいえ (楽そう - 吐出の可能性)" }
+      ],
+      "isDiarrhea": "犬は下痢をしていますか？",
+      "diarrheaFrequency": "1日に何回下痢をしますか？",
+      "diarrheaFrequencyPlaceholder": "例: 今日5回、2日間毎日3回",
+      "diarrheaConsistency": "下痢はどのような状態ですか？ (すべて選択)",
+      "diarrheaConsistencyOptions": [
+        { "value": "Watery", "label": "水様便" },
+        { "value": "Pasty / Porridge-like", "label": "泥状便" },
+        { "value": "Mucus present", "label": "粘液混じり" },
+        { "value": "Bright red blood", "label": "鮮血混じり (血便)" },
+        { "value": "Black / Tarry stool", "label": "黒色便 (タール便)" },
+        { "value": "Greasy / Oily", "label": "脂肪便" },
+        { "value": "Unusual color (grey, green)", "label": "異常な色 (灰色、緑色など)" }
+      ],
+      "diarrheaStraining": "排便時にいきんでいますか (しぶり腹)？",
+      "diarrheaAccidents": "家の中で粗相をしますか？",
+      "diarrheaOdor": "便の臭いは普段よりひどいですか？",
+      "diarrheaOdorOptions": [
+         { "value": "Normal", "label": "普通" },
+         { "value": "Very Foul", "label": "普段よりかなりひどい" }
+      ],
+      "appetite": "現在の食欲は？",
+      "appetiteOptions": [
+        { "value": "Normal", "label": "普通" },
+        { "value": "Decreased", "label": "低下" },
+        { "value": "Absent", "label": "なし (絶食)" },
+        { "value": "Increased", "label": "亢進" }
+      ],
+      "thirst": "飲水量は？",
+      "thirstOptions": [
+        { "value": "Normal", "label": "普通" },
+        { "value": "Increased", "label": "増加 (多く飲む)" },
+        { "value": "Decreased", "label": "減少 (あまり飲まない)" }
+      ],
+      "borborygmi": "お腹がゴロゴロ鳴りますか？",
+      "borborygmiOptions": [
+         { "value": "Yes", "label": "はい (大きい/頻繁)" },
+         { "value": "No", "label": "いいえ/普通" }
+      ],
+      "abdominalPain": "腹痛の兆候はありますか？",
+      "abdominalPainOptions": [
+        { "value": "Yes", "label": "はい (触ると嫌がる、体を丸める、祈りのポーズ)" },
+        { "value": "No", "label": "いいえ" },
+        { "value": "Not Sure", "label": "不明" }
+      ],
+      "flatulence": "おならが増えましたか？",
+      "flatulenceOptions": [
+        { "value": "Yes", "label": "はい (普段より多い)" },
+        { "value": "No", "label": "いいえ/普通" }
+      ],
+      "lipSmackingDrooling": "口をくちゃくちゃしたり、よだれが増えたりしましたか？",
+      "lethargy": "犬は元気がないですか？",
+      "lethargyOptions": [
+        { "value": "Yes", "label": "はい (活動量低下、寝てばかりいる)" },
+        { "value": "No", "label": "いいえ (普段通り)" }
+      ],
+      "fever": "熱があるように思われますか？",
+      "feverOptions": [
+         { "value": "Yes", "label": "はい (体が熱い)" },
+         { "value": "No", "label": "いいえ" },
+         { "value": "Not Sure", "label": "不明" }
+      ],
+      "gumColor": "歯茎の色:",
+      "gumColorOptions": [
+        { "value": "Pink", "label": "ピンク (正常)" },
+        { "value": "Pale", "label": "蒼白/白い" },
+        { "value": "Yellow", "label": "黄色 (黄疸)" },
+        { "value": "Purple/Blue", "label": "紫/青色 (チアノーゼ)" },
+        { "value": "Not Sure", "label": "不明" }
+      ],
+      "dewormingStatus": "内部寄生虫の駆除状況:",
+      "dewormingPlaceholder": "例: はい、先月ドロンタール投与、いいえ",
+      "vaccinationStatus": "ワクチン接種状況 (特にパルボ/ジステンパー):",
+      "vaccinationOptions": [
+        { "value": "Up to date", "label": "最新の状態" },
+        { "value": "Overdue", "label": "期限切れ" },
+        { "value": "Unknown", "label": "不明" }
+      ],
+      "recentStress": "最近ストレスのかかる出来事 (ペットホテル、引っ越し、新しいペット) がありましたか？",
+      "otherPetsAffected": "同居している他のペットに同様の症状はありますか？",
+      "prevVetVisit": "以前にこの消化器の問題で獣医師の診察を受けましたか？",
+      "prevTests": "以前に行われた検査:",
+      "prevTestsPlaceholder": "例: レントゲン、血液検査、糞便検査",
+      "prevTreatments": "以前に試した治療:",
+      "prevTreatmentsPlaceholder": "例: 薬 (名前がわかれば)、輸液療法、食事変更",
+      "prevResponse": "以前の治療への反応:",
+      "prevResponseOptions": [
+        { "value": "Good", "label": "解決済み" },
+        { "value": "Partial", "label": "改善したが再発" },
+        { "value": "None", "label": "改善なし" },
+        { "value": "Unknown", "label": "不明" }
+      ],
+      "yesNoOptions": [ 
+        { "value": "Yes", "label": "はい" },
+        { "value": "No", "label": "いいえ" }
+      ]
+    }
+  },
+  "notFoundPage": {
+    "title": "404 - ページが見つかりません",
+    "message": "お探しのページは存在しません。",
+    "goHome": "ホームページへ移動"
+  }
+}

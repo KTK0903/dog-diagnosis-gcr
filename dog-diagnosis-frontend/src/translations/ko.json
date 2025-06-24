@@ -1,0 +1,390 @@
+{
+  "common": {
+    "language": "언어:",
+    "loading": "로딩 중...",
+    "submitting": "제출 중...",
+    "analyzing": "분석 중...",
+    "errorPrefix": "오류:",
+    "genericError": "예상치 못한 오류가 발생했습니다. 나중에 다시 시도해주세요.",
+    "apiError": "분석 결과를 가져오는데 실패했습니다. 입력 내용을 확인 후 다시 시도해주세요.",
+    "requiredField": "(필수)",
+    "selectOption": "선택...",
+    "yes": "예",
+    "no": "아니요",
+    "notProvided": "모름/미제공",
+    "unknown": "알 수 없음",
+    "notTriedUnknown": "시도 안함/알 수 없음",
+    "good": "좋음/효과 있음",
+    "partial": "부분적 효과",
+    "none": "효과 없음",
+    "resolved": "해결됨",
+    "improvedRecurred": "개선되었으나 재발",
+    "noImprovement": "개선 없음",
+    "exampleFrequency": "예: 매달, 3개월마다",
+    "exampleDate": "예: 2023-10-25, 지난 주"
+  },
+  "homePage": {
+    "welcome": "반려동물 진단 도우미에 오신 것을 환영합니다",
+    "description": "필요한 진단 유형을 선택하거나 언어를 변경해주세요.",
+    "skinButton": "피부 질환 진단 시작",
+    "digestiveButton": "소화기 질환 진단 시작"
+  },
+  "disclaimer": {
+    "title": "중요 안내:",
+    "line1": "이 도구는 제공하신 정보만을 기반으로 AI가 생성한 제안을 제공합니다. 이는 전문적인 수의학적 진단을 대체할 수 **없습니다**.",
+    "line2": "증상은 여러 질환에서 중복될 수 있으며, 정확한 진단과 적절한 치료 계획을 위해서는 자격을 갖춘 수의사의 철저한 진찰 및 필요한 진단 검사가 필수적입니다. 반려동물의 건강 문제에 대해서는 항상 수의사와 상담하십시오."
+  },
+  "skinDiagnosisPage": {
+    "title": "피부 질환 문진표",
+    "description": "강아지의 피부 상태에 대한 아래 질문에 최대한 정확하게 답변해주세요.",
+    "getAnalysisButton": "분석 결과 보기",
+    "resultsTitle": "분석 결과 (AI 제안)",
+    "sections": {
+      "basicInfo": "기본 정보",
+      "mainComplaintHistory": "주요 증상 및 병력",
+      "itchiness": "가려움증 (소양감)",
+      "lesionCharacteristics": "병변 특징",
+      "environmentManagement": "환경 및 관리",
+      "diet": "식이",
+      "parasiteControl": "기생충 관리",
+      "contagion": "전염성",
+      "generalHealth": "전신 건강 상태",
+      "previousTreatment": "이 문제에 대한 이전 치료 경험"
+    },
+    "labels": {
+      "breed": "품종:",
+      "age": "나이:",
+      "sex": "성별:",
+      "male": "수컷",
+      "female": "암컷",
+      "neutered": "중성화 여부:",
+      "neuteredOptions": [
+        { "value": "Yes", "label": "예" },
+        { "value": "No", "label": "아니요" },
+        { "value": "Not Provided", "label": "모름/미제공" }
+      ],
+      "mainComplaint": "가장 불편한 점 (예: 가려움, 탈모, 발진):",
+      "firstNoticed": "언제 처음 문제를 발견했나요?",
+      "firstNoticedPlaceholder": "예: 2주 전, 지난 여름",
+      "onsetSpeed": "발병 속도:",
+      "onsetSpeedOptions": [
+        { "value": "Sudden", "label": "갑자기" },
+        { "value": "Gradual", "label": "서서히" }
+      ],
+      "initialLocation": "몸의 어느 부위에서 시작됐나요?",
+      "currentLocation": "현재 증상이 있는 부위는 어디인가요?",
+      "spread": "다른 부위로 퍼졌나요?",
+      "symmetry": "증상 부위가 대칭적인가요?",
+      "symmetryOptions": [
+        { "value": "Yes", "label": "예 (대칭)" },
+        { "value": "No", "label": "아니요 (비대칭)" }
+      ],
+      "previousIssues": "이전에 비슷한 피부 문제를 겪은 적이 있나요?",
+      "seasonality": "계절성이 있는 것 같나요?",
+      "progress": "전반적인 진행 상태:",
+      "progressOptions": [
+        { "value": "Worsening", "label": "악화" },
+        { "value": "Stable", "label": "유지" },
+        { "value": "Improving", "label": "호전" }
+      ],
+      "isItchy": "강아지가 가려워하나요?",
+      "pruritusScore": "가려움증 점수 (1=전혀 없음, 10=매우 심함, 지속적):",
+      "itchMethod": "어떻게 가려움을 표현하나요? (모두 선택)",
+      "itchMethodOptions": [
+        { "value": "Scratching (Paws)", "label": "긁기 (발 사용)" },
+        { "value": "Licking", "label": "핥기" },
+        { "value": "Chewing/Biting", "label": "씹거나 물기" },
+        { "value": "Rubbing on surfaces", "label": "표면에 문지르기" },
+        { "value": "Shaking head", "label": "머리 털기" }
+      ],
+      "itchLocation": "주로 어디를 가장 가려워하나요?",
+      "itchLesionOnset": "가려움과 피부 병변 중 무엇이 먼저 시작되었나요?",
+      "itchLesionOnsetOptions": [
+        { "value": "Itch First", "label": "가려움이 먼저 시작됨" },
+        { "value": "Lesions First", "label": "피부 변화가 먼저 나타남" },
+        { "value": "Same Time", "label": "둘 다 동시에 시작됨" },
+        { "value": "Not Sure", "label": "확실하지 않음" }
+      ],
+      "pastItchMedication": "과거 가려움증 약물 반응 (사용했다면):",
+      "steroids": "스테로이드 (예: 프레드니솔론)",
+      "apoquelCytopoint": "아포퀠 / 사이토포인트",
+      "responseOptions": [ 
+        { "value": "Good", "label": "좋음/효과 있음" },
+        { "value": "Partial", "label": "부분적 효과" },
+        { "value": "None", "label": "효과 없음" },
+        { "value": "Unknown", "label": "시도 안함/알 수 없음" }
+      ],
+      "lesionTypes": "피부 병변은 어떻게 보이나요? (모두 선택)",
+      "lesionTypeOptions": [
+        { "value": "Redness (Erythema)", "label": "붉어짐 (홍반)" },
+        { "value": "Bumps (Papules)", "label": "오돌토돌한 돌기 (구진)" },
+        { "value": "Pimples/Pustules", "label": "뾰루지/농포" },
+        { "value": "Hair Loss (Alopecia)", "label": "탈모 (털 빠짐)" },
+        { "value": "Scales/Dandruff", "label": "비듬/각질" },
+        { "value": "Crusts/Scabs", "label": "딱지/부스럼" },
+        { "value": "Thickened Skin (Lichenification)", "label": "두꺼워진 피부 (태선화)" },
+        { "value": "Darkened Skin (Hyperpigmentation)", "label": "어두워진 피부 (색소침착)" },
+        { "value": "Sores/Ulcers", "label": "짓무름/궤양" },
+        { "value": "Greasy Skin/Coat", "label": "기름진 피부/털" },
+        { "value": "Lumps/Masses", "label": "덩어리/종괴" },
+        { "value": "Circular Lesions (Ringworm-like)", "label": "원형 병변 (링웜 유사)" }
+      ],
+      "skinTexture": "피부 질감이 평소와 다르다면 설명해주세요 (예: 건조함, 기름짐, 거칠음):",
+      "odor": "피부에서 이상한 냄새가 나나요?",
+      "indoorOutdoor": "주요 생활 공간:",
+      "indoorOutdoorOptions": [
+        { "value": "Indoor", "label": "실내" },
+        { "value": "Outdoor", "label": "실외" },
+        { "value": "Both", "label": "실내외 모두" }
+      ],
+      "walkEnvironment": "주요 산책/운동 환경 (예: 잔디, 아스팔트, 흙):",
+      "envChanges": "최근 환경 변화 (이사, 새 세제, 새 가구/카펫 등)가 있었나요?",
+      "groomingFreq": "미용/목욕 빈도:",
+      "shampoo": "사용하는 샴푸/컨디셔너:",
+      "bedding": "침구 종류 및 세탁 빈도:",
+      "contactIrritants": "자극 물질(식물, 화학물질, 특정 재질 등) 접촉 가능성이 있나요?",
+      "yesNoPossiblyOptions": [ 
+        { "value": "Yes", "label": "예" },
+        { "value": "No", "label": "아니요" },
+        { "value": "Possibly", "label": "가능성 있음/확실치 않음" }
+      ],
+      "mainFood": "현재 주식 사료 (브랜드 및 제품명):",
+      "foodSince": "이 사료를 먹은 지 얼마나 됐나요?",
+      "foodSincePlaceholder": "예: 6개월, 어릴 때부터",
+      "treats": "간식, 사람 음식, 껌, 영양제 (모두 기재):",
+      "dietChange": "최근 1-2개월 내 새로운 음식/간식을 먹었나요?",
+      "rxDietTrial": "처방식/제한 식이 시험을 해본 적이 있나요?",
+      "giSymptoms": "동반되는 구토나 설사가 있나요?",
+      "parasiteControlActive": "정기적인 외부기생충(벼룩/진드기/옴) 예방을 하나요?",
+      "parasiteProduct": "사용하는 예방약 제품명:",
+      "parasiteFrequency": "얼마나 자주 적용/급여하나요?",
+      "parasiteLastDate": "마지막 적용/급여 날짜:",
+      "fleaTickSeen": "최근 강아지나 환경에서 벼룩이나 진드기를 본 적이 있나요?",
+      "otherPetsAffected": "함께 사는 다른 동물이 비슷한 증상을 보이나요?",
+      "humansAffected": "함께 사는 사람 중에 최근 새로운 피부 문제(발진, 가려움)가 생긴 사람이 있나요?",
+      "otherSymptoms": "다른 증상(기력저하, 식욕변화, 다음/다뇨, 기침, 절뚝거림 등)이 있나요?",
+      "preexistingConditions": "기존에 앓고 있는 질환(알레르기, 갑상선 질환, 쿠싱 등)이 있나요?",
+      "currentMeds": "현재 복용 중인 약물이나 영양제(기생충 예방약 제외)가 있나요?",
+      "vaccinationStatus": "예방 접종 상태:",
+      "vaccinationOptions": [
+        { "value": "Up to date", "label": "최신 상태" },
+        { "value": "Overdue", "label": "기간 지남" },
+        { "value": "Unknown", "label": "알 수 없음" }
+      ],
+      "prevVetVisit": "이전에 이 피부 문제로 병원 진료를 받은 적이 있나요?",
+      "prevTests": "이전에 이 피부 문제로 진행했던 검사:",
+      "prevTestsPlaceholder": "예: 피부 소파 검사, 세포 검사, 배양 검사, 조직 검사, 알레르기 검사",
+      "prevTreatments": "이전에 이 피부 문제로 시도했던 치료:",
+      "prevTreatmentsPlaceholder": "예: 항생제, 항진균제, 스테로이드, 약용 샴푸, 식이 변경",
+      "prevResponse": "이전 치료에 대한 반응:",
+      "prevResponseOptions": [ 
+        { "value": "Good", "label": "해결됨" },
+        { "value": "Partial", "label": "개선되었으나 재발" },
+        { "value": "None", "label": "개선 없음" },
+        { "value": "Unknown", "label": "알 수 없음" }
+      ],
+      "yesNoOptions": [ 
+        { "value": "Yes", "label": "예" },
+        { "value": "No", "label": "아니요" }
+      ]
+    }
+  },
+  "digestiveDiagnosisPage": {
+    "title": "소화기 질환 문진표",
+    "description": "강아지의 소화기 증상에 대한 아래 질문에 최대한 정확하게 답변해주세요.",
+    "getAnalysisButton": "분석 결과 보기",
+    "resultsTitle": "분석 결과 (AI 제안)",
+    "sections": {
+      "basicInfo": "기본 정보",
+      "mainComplaintHistory": "주요 증상 및 병력",
+      "diet": "식이 (매우 중요)",
+      "vomiting": "구토",
+      "diarrhea": "설사",
+      "appetiteThirst": "식욕 및 음수량",
+      "otherGISymptoms": "기타 소화기 증상",
+      "generalCondition": "전신 상태",
+      "environmentManagement": "환경 및 관리",
+      "previousTreatment": "이 문제에 대한 이전 치료 경험"
+    },
+    "labels": {
+      "breed": "품종:",
+      "age": "나이:",
+      "sex": "성별:",
+      "male": "수컷",
+      "female": "암컷",
+      "neutered": "중성화 여부:",
+      "neuteredOptions": [
+        { "value": "Yes", "label": "예" },
+        { "value": "No", "label": "아니요" },
+        { "value": "Not Provided", "label": "모름/미제공" }
+      ],
+      "weightInfo": "현재 체중 및 최근 변화:",
+      "weightInfoPlaceholder": "예: 10kg, 최근 한 달간 1kg 감소",
+      "mainComplaint": "가장 불편한 점 (예: 구토, 설사, 식욕 부진):",
+      "firstNoticed": "언제 처음 문제를 발견했나요?",
+      "firstNoticedPlaceholder": "예: 3일 전, 어제 아침",
+      "onsetSpeed": "발병 속도:",
+      "onsetSpeedOptions": [
+         { "value": "Sudden", "label": "갑자기 (급성)" },
+         { "value": "Gradual", "label": "서서히 (만성)" }
+      ],
+      "symptomPattern": "증상 양상:",
+      "symptomPatternOptions": [
+        { "value": "Continuous", "label": "지속적" },
+        { "value": "Intermittent", "label": "간헐적 (나타났다 사라짐)" }
+      ],
+      "progress": "전반적인 진행 상태:",
+      "progressOptions": [
+        { "value": "Worsening", "label": "악화" },
+        { "value": "Stable", "label": "유지" },
+        { "value": "Improving", "label": "호전" }
+      ],
+      "previousIssues": "이전에 비슷한 소화기 문제를 겪은 적이 있나요?",
+      "mainFood": "현재 주식 사료 (브랜드 및 제품명):",
+      "foodSince": "이 사료를 먹은 지 얼마나 됐나요?",
+      "foodSincePlaceholder": "예: 6개월, 어릴 때부터",
+      "treats": "간식, 사람 음식, 껌, 영양제 (모두 기재):",
+      "dietChange": "최근 1-2주 내 새로운 음식/간식을 먹었나요?",
+      "eatingHabits": "평소 식습관:",
+      "eatingHabitsOptions": [
+        { "value": "Normal", "label": "보통" },
+        { "value": "Voracious", "label": "식탐 많음 (빨리/많이 먹음)" },
+        { "value": "Picky", "label": "입 짧음 / 까다로움" }
+      ],
+      "scavenging": "강아지가 쓰레기통을 뒤지거나 바닥의 이물질을 먹나요?",
+      "toyIngestion": "장난감 조각 등 이물질을 삼켰을 가능성이 있나요?",
+      "toxinExposure": "독성 물질(식물, 화학물질, 사람 약 등)을 섭취했을 가능성이 있나요?",
+      "yesNoPossiblyOptions": [
+        { "value": "Yes", "label": "예" },
+        { "value": "No", "label": "아니요" },
+        { "value": "Possibly", "label": "가능성 있음/확실치 않음" }
+      ],
+      "isVomiting": "강아지가 구토를 하나요?",
+      "vomitFrequency": "얼마나 자주 구토하나요?",
+      "vomitFrequencyPlaceholder": "예: 오늘 2번, 며칠에 한 번",
+      "vomitTiming": "주로 언제 구토하나요?",
+      "vomitTimingOptions": [
+         { "value": "Soon after eating", "label": "식후 바로" },
+         { "value": "Hours after eating", "label": "식후 몇 시간 뒤" },
+         { "value": "Empty stomach (e.g., morning)", "label": "공복 시 (예: 아침)" },
+         { "value": "Variable", "label": "다양함 / 특정 패턴 없음" }
+      ],
+      "vomitContents": "구토물 내용물은 무엇인가요? (모두 선택)",
+      "vomitContentsOptions": [
+        { "value": "Undigested food", "label": "소화 안 된 사료" },
+        { "value": "Partially digested food", "label": "부분 소화된 음식물" },
+        { "value": "Clear liquid/Saliva", "label": "투명한 액체/침" },
+        { "value": "Yellow liquid (Bile)", "label": "노란 액체 (담즙)" },
+        { "value": "White foam", "label": "흰 거품" },
+        { "value": "Bright red blood", "label": "선홍색 피" },
+        { "value": "Dark blood (Coffee grounds)", "label": "검붉은 피 (커피 찌꺼기 모양)" },
+        { "value": "Foreign material", "label": "이물질" }
+      ],
+      "vomitEffort": "구토 시 힘들어하는 모습(헛구역질/복부수축)을 보이나요?",
+      "vomitEffortOptions": [
+        { "value": "Yes", "label": "예 (힘들어 보임)" },
+        { "value": "No", "label": "아니요 (힘들이지 않음 - 역류 가능성)" }
+      ],
+      "isDiarrhea": "강아지가 설사를 하나요?",
+      "diarrheaFrequency": "하루에 몇 번 설사를 하나요?",
+      "diarrheaFrequencyPlaceholder": "예: 오늘 5번, 이틀간 하루 3번씩",
+      "diarrheaConsistency": "설사 양상은 어떤가요? (모두 선택)",
+      "diarrheaConsistencyOptions": [
+        { "value": "Watery", "label": "물 설사" },
+        { "value": "Pasty / Porridge-like", "label": "죽 같은 형태" },
+        { "value": "Mucus present", "label": "점액 섞임" },
+        { "value": "Bright red blood", "label": "선홍색 피 섞임 (혈변)" },
+        { "value": "Black / Tarry stool", "label": "검은색/타르 변 (흑변)" },
+        { "value": "Greasy / Oily", "label": "기름진 변" },
+        { "value": "Unusual color (grey, green)", "label": "특이한 색깔 (회색, 녹색 등)" }
+      ],
+      "diarrheaStraining": "배변 시 힘들어하나요 (후중감)?",
+      "diarrheaAccidents": "집안에 배변 실수를 하나요?",
+      "diarrheaOdor": "변 냄새가 평소보다 훨씬 심한가요?",
+      "diarrheaOdorOptions": [
+         { "value": "Normal", "label": "보통" },
+         { "value": "Very Foul", "label": "평소보다 훨씬 심함" }
+      ],
+      "appetite": "현재 식욕은 어떤가요?",
+      "appetiteOptions": [
+        { "value": "Normal", "label": "보통" },
+        { "value": "Decreased", "label": "감소" },
+        { "value": "Absent", "label": "없음 (절식)" },
+        { "value": "Increased", "label": "증가" }
+      ],
+      "thirst": "음수량은 어떤가요?",
+      "thirstOptions": [
+        { "value": "Normal", "label": "보통" },
+        { "value": "Increased", "label": "증가 (물을 더 많이 마심)" },
+        { "value": "Decreased", "label": "감소 (물을 덜 마심)" }
+      ],
+      "borborygmi": "배에서 꾸르륵 소리가 많이 나나요?",
+      "borborygmiOptions": [
+         { "value": "Yes", "label": "예 (소리가 크거나 잦음)" },
+         { "value": "No", "label": "아니요 / 평소 수준" }
+      ],
+      "abdominalPain": "배가 아파 보이나요?",
+      "abdominalPainOptions": [
+        { "value": "Yes", "label": "예 (만지면 싫어함, 몸 웅크림, 기도 자세)" },
+        { "value": "No", "label": "아니요" },
+        { "value": "Not Sure", "label": "확실하지 않음" }
+      ],
+      "flatulence": "가스 배출(방귀)이 늘었나요?",
+      "flatulenceOptions": [
+        { "value": "Yes", "label": "예 (평소보다 많음)" },
+        { "value": "No", "label": "아니요 / 평소 수준" }
+      ],
+      "lipSmackingDrooling": "입맛을 다시거나 침을 많이 흘리나요?",
+      "lethargy": "강아지가 기운이 없나요?",
+      "lethargyOptions": [
+        { "value": "Yes", "label": "예 (활동량 감소, 잠이 많아짐)" },
+        { "value": "No", "label": "아니요 (평소와 같음)" }
+      ],
+      "fever": "열이 나는 것 같나요?",
+      "feverOptions": [
+         { "value": "Yes", "label": "예 (몸이 뜨겁게 느껴짐)" },
+         { "value": "No", "label": "아니요" },
+         { "value": "Not Sure", "label": "확실하지 않음" }
+      ],
+      "gumColor": "잇몸 색깔:",
+      "gumColorOptions": [
+        { "value": "Pink", "label": "분홍색 (정상)" },
+        { "value": "Pale", "label": "창백함 / 흰색" },
+        { "value": "Yellow", "label": "노란색 (황달)" },
+        { "value": "Purple/Blue", "label": "보라색/푸른색 (청색증)" },
+        { "value": "Not Sure", "label": "확실하지 않음" }
+      ],
+      "dewormingStatus": "내부 기생충 구충 상태:",
+      "dewormingPlaceholder": "예: 지난 달 드론탈 완료, 아니오",
+      "vaccinationStatus": "예방 접종 상태 (특히 파보/디스템퍼):",
+      "vaccinationOptions": [
+        { "value": "Up to date", "label": "최신 상태" },
+        { "value": "Overdue", "label": "기간 지남" },
+        { "value": "Unknown", "label": "알 수 없음" }
+      ],
+      "recentStress": "최근 스트레스 받을 만한 일(호텔링, 이사, 새 반려동물)이 있었나요?",
+      "otherPetsAffected": "함께 사는 다른 동물이 비슷한 증상을 보이나요?",
+      "prevVetVisit": "이전에 이 소화기 문제로 병원 진료를 받은 적이 있나요?",
+      "prevTests": "이전에 진행했던 검사:",
+      "prevTestsPlaceholder": "예: 엑스레이, 혈액 검사, 분변 검사",
+      "prevTreatments": "이전에 시도했던 치료:",
+      "prevTreatmentsPlaceholder": "예: 약물 (이름 알면 기재), 수액 처치, 식이 변경",
+      "prevResponse": "이전 치료에 대한 반응:",
+      "prevResponseOptions": [
+        { "value": "Good", "label": "해결됨" },
+        { "value": "Partial", "label": "개선되었으나 재발" },
+        { "value": "None", "label": "개선 없음" },
+        { "value": "Unknown", "label": "알 수 없음" }
+      ],
+      "yesNoOptions": [ 
+        { "value": "Yes", "label": "예" },
+        { "value": "No", "label": "아니요" }
+      ]
+    }
+  },
+  "notFoundPage": {
+    "title": "404 - 페이지를 찾을 수 없습니다",
+    "message": "찾으시는 페이지가 존재하지 않습니다.",
+    "goHome": "홈 페이지로 가기"
+  }
+}

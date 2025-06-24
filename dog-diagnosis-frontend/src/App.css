@@ -1,0 +1,305 @@
+/* frontend/src/App.css (색감 및 버튼 가시성 위주 수정) */
+
+/* --- Google Fonts Import (index.html에 추가 권장) --- */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap'); */
+
+/* --- CSS 변수 정의 (색상 팔레트 위주) --- */
+:root {
+  /* Color Palette from provided style */
+  --bg-warm-beige: #f8f0e3;
+  --text-deep-brown: #544e47;
+  --text-secondary-brown: #7a736c;
+  --accent-coral: #e07a5f;
+  --accent-sage-green: #81b29a;
+  --accent-deep-blue: #3d405b;
+  --accent-gold: #f2cc8f;
+  --button-text-light: #ffffff;
+  --button-text-dark: #544e47; /* 버튼 배경색에 따라 사용 */
+  --content-background: #ffffff; /* 기존 스타일 유지 */
+  --input-focus-border: var(--accent-sage-green); /* 포커스 색상 변경 */
+  --error-color: #e74c3c;
+  --error-background: #fdeded;
+  --disclaimer-background: #fff9e6;
+  --disclaimer-border: #ffeeba;
+  --disclaimer-text: #8a6d3b;
+  --link-color: var(--accent-sage-green); /* 링크 색상 변경 */
+  --link-hover-color: var(--accent-deep-blue); /* 링크 호버 색상 변경 */
+
+  /* Font Weights (참고용) */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+/* --- Global Styles & Resets --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* 기존 스타일 유지 */
+}
+
+body {
+  margin: 0; /* 기존 스타일 유지 가능성 높음 */
+  font-family: 'Noto Sans KR', 'Noto Sans', sans-serif; /* 한국어 우선 폰트 적용 */
+  background-color: var(--bg-warm-beige); /* 새 배경색 적용 */
+  color: var(--text-deep-brown); /* 새 기본 텍스트 색상 적용 */
+  -webkit-font-smoothing: antialiased; /* 기존 스타일 유지 */
+  -moz-osx-font-smoothing: grayscale; /* 기존 스타일 유지 */
+  /* 기존 padding, display, align-items, overflow-x 유지 */
+  padding: 15px; /* 이전 스타일 값 유지 */
+  font-size: 16px; /* 이전 스타일 값 유지 */
+  display: flex; /* 이전 스타일 값 유지 */
+  flex-direction: column; /* 이전 스타일 값 유지 */
+  align-items: center; /* 이전 스타일 값 유지 */
+  overflow-x: hidden; /* 이전 스타일 값 유지 */
+  line-height: 1.6; /* 약간 조정 (기존 값 확인 필요) */
+}
+
+/* Language-specific font overrides */
+body:lang(ko) { font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; }
+body:lang(ja) { font-family: 'Noto Sans JP', 'Meiryo', sans-serif; word-break: keep-all; }
+body:lang(en) { font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+body:lang(es) { font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+
+/* --- App Container --- */
+/* 기존 .App 스타일에서 배경색과 그림자만 유지하고, 색상 관련 제거 */
+.App {
+  max-width: 900px; /* 기존 스타일 값 유지 */
+  margin: 2rem auto; /* 기존 스타일 값 유지 */
+  padding: 1.5rem; /* 기존 스타일 값 유지 */
+  background-color: var(--content-background); /* 유지 (흰색 배경) */
+  border-radius: 8px; /* 기존 스타일 값 유지 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* 약간 조정된 그림자 */
+}
+
+/* --- Basic Element Styling (색상 위주 변경) --- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent-coral); /* 새 제목 색상 적용 */
+  /* 기존 margin, padding, border, font-size 등 유지 */
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  line-height: 1.3;
+  font-weight: var(--font-weight-bold);
+}
+h1 { font-size: 2em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
+h2 { font-size: 1.6em; }
+
+p {
+    /* 기존 스타일 유지 */
+    margin-bottom: 1em;
+}
+
+a {
+  color: var(--link-color); /* 새 링크 색상 적용 */
+  /* 기존 text-decoration, transition 유지 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color); /* 새 링크 호버 색상 적용 */
+  text-decoration: underline; /* 기존 스타일 유지 */
+}
+
+hr { /* 기존 스타일 유지 */
+  border: none;
+  border-top: 1px solid var(--border-color-light, #dee2e6); /* 변수 사용, fallback 추가 */
+  margin: 2rem 0;
+}
+
+code, pre { /* 기존 스타일 유지 */
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  background-color: #f8f9fa;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+pre { /* 기존 스타일 유지 */
+  padding: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--border-color-light, #dee2e6);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: var(--content-background); /* 일관성을 위해 흰색 배경 */
+  color: var(--text-deep-brown); /* 내부 텍스트 색상 */
+}
+
+/* --- Button Styling (가시성 및 색상 위주 변경) --- */
+button, .diagnosis-button {
+  /* ** 가시성 확보: 배경색과 글자색 대비 명확화 ** */
+  background-color: var(--accent-sage-green); /* 기본 버튼 배경색 (세이지 그린) */
+  color: var(--button-text-light); /* 기본 버튼 글자색 (흰색) */
+
+  /* 기존 크기, 여백, 폰트 등 스타일 최대한 유지 */
+  display: inline-block;
+  padding: 10px 20px; /* 제공된 스타일 값 유지 */
+  margin: 8px 8px 8px 0; /* 기존 스타일 유지 (또는 제공된 값) */
+  font-size: 1rem; /* 기존 스타일 유지 (또는 제공된 값) */
+  font-weight: var(--font-weight-medium); /* 제공된 스타일 값 유지 */
+  text-align: center;
+  border: none;
+  border-radius: 8px; /* 약간 둥글게 */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* 기존 transition 유지 + 추가 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* 약간의 그림자 추가 */
+  line-height: 1.4;
+  min-width: 100px;
+}
+
+/* 호버 시 색상 변경 */
+button:hover:not(:disabled), .diagnosis-button:hover:not(:disabled) {
+  background-color: var(--accent-deep-blue); /* 호버 시 색상 (딥 블루) */
+  color: var(--button-text-light); /* 호버 시 글자색 유지 */
+  transform: translateY(-2px); /* 기존 hover 효과 유지 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 기존 hover 효과 유지 */
+}
+
+/* Active 효과 (클릭 시) */
+button:active:not(:disabled), .diagnosis-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+/* Disabled 버튼 스타일 */
+button:disabled, .diagnosis-button:disabled {
+  background-color: #bdc3c7; /* 기존 스타일 유지 */
+  cursor: not-allowed; /* 기존 스타일 유지 */
+  opacity: 0.7; /* 기존 스타일 유지 */
+  box-shadow: none; /* 기존 스타일 유지 */
+}
+
+/* 홈페이지 버튼 색상 특화 */
+.home-page .skin-button { background-color: var(--accent-sage-green); }
+.home-page .skin-button:hover:not(:disabled) { background-color: var(--accent-deep-blue); }
+.home-page .digestive-button { background-color: var(--accent-coral); }
+.home-page .digestive-button:hover:not(:disabled) { background-color: #c96347; } /* 어두운 코랄 */
+
+/* 결과 버튼 등 특정 버튼 색상 */
+button.results-button, #resultsButton {
+  background-color: var(--accent-coral); 
+  color: #ffffff; /* 밝은 색상으로 고정 */
+  font-weight: var(--font-weight-bold);
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); /* 가독성 보강 */
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button.results-button:hover:not(:disabled), #resultsButton:hover:not(:disabled) {
+  background-color: #c96347;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Form Styling (기존 스타일 유지, 포커스 색상만 변경) --- */
+form { margin-top: 1.5rem; /* 기존 값 유지 */ }
+form div:not(.radio-group-container):not(.checkbox-grid-container) { margin-bottom: 1rem; /* 기존 값 유지 */ }
+.form-group { /* 기존 값 유지 */
+    border: 1px solid var(--border-color-light, #dee2e6);
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    background-color: #fdfdfd;
+}
+label { /* 기존 값 유지 */
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+  color: var(--text-secondary-brown); /* 라벨 색상 약간 변경 */
+  font-size: 1rem;
+}
+.form-group label { /* 기존 값 유지 */
+    font-weight: normal;
+    color: var(--text-deep-brown);
+    margin-bottom: 0;
+}
+.form-group > label:first-child { /* 기존 값 유지 */
+    font-weight: bold;
+    color: var(--accent-deep-blue); /* 그룹 제목 색상 변경 */
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    display: block;
+}
+input[type="text"], input[type="number"], input[type="email"], textarea, select { /* 기존 스타일 유지 */
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid var(--border-color-light, #ccc); /* 변수 또는 기존 값 */
+  border-radius: 4px;
+  font-size: 1em;
+  margin-top: 0.2rem;
+  color: var(--text-deep-brown); /* 입력 텍스트 색상 */
+  background-color: var(--content-background); /* 입력 배경색 */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; /* 기존 값 유지 */
+}
+input[type="checkbox"], input[type="radio"] { /* 기존 스타일 유지 */
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+textarea { min-height: 100px; resize: vertical; /* 기존 값 유지 */ }
+select { cursor: pointer; /* 기존 값 유지 */ }
+
+/* ** 포커스 스타일 색상 변경 ** */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--input-focus-border); /* 새 포커스 색상 (세이지 그린) */
+  box-shadow: 0 0 0 3px rgba(129, 178, 154, 0.25); /* 새 포커스 링 색상 */
+}
+.radio-group-container, .checkbox-group-container { /* 기존 값 유지 */
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 0.5rem; border: none; padding: 0;
+}
+.checkbox-grid-container { /* 기존 값 유지 */
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem 1rem; margin-top: 0.5rem;
+}
+
+/* --- Component Specific Styles (색상 위주 변경) --- */
+
+/* Loading Spinner */
+.spinner-container { /* 기존 값 유지 */ display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 3rem 1rem; min-height: 200px; text-align: center; }
+.loading-spinner { /* 기존 값 유지 */ width: 50px; height: 50px; border: 6px solid rgba(0, 0, 0, 0.1); border-top-color: var(--accent-coral); border-radius: 50%; animation: spin 1s linear infinite; }
+.loading-text { /* 기존 값 유지 */ margin-top: 1.5rem; font-size: 1.1em; color: var(--text-secondary-brown); font-weight: bold; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Disclaimer */
+.disclaimer { /* 기존 값 유지 + 색상 변수 */
+  background-color: var(--disclaimer-background); color: var(--disclaimer-text); border: 1px solid var(--disclaimer-border); border-left: 5px solid #ffc107; padding: 15px 20px; border-radius: 4px; margin: 25px 0; font-size: 0.95em;
+}
+.disclaimer p { margin: 0 0 0.8rem 0; }
+.disclaimer p:last-child { margin-bottom: 0; }
+.disclaimer strong { font-weight: var(--font-weight-bold); color: #b08f1c; }
+
+/* Error Message */
+.error-message { /* 기존 값 유지 + 색상 변수 */
+  color: var(--error-color); background-color: var(--error-background); border: 1px solid var(--error-color); border-left: 5px solid var(--error-color); padding: 15px 20px; border-radius: 4px; margin: 1.5rem 0;
+}
+.error-message strong { font-weight: bold; }
+
+/* Result Section */
+.results-section { /* 기존 값 유지 + 색상 변수 */
+    font-weight: var(--font-weight-normal); font-size: 1em; margin-top: 30px; padding: 20px 25px; border: none; border-radius: 10px; background-color: #fdfaf5; color: var(--text-deep-brown); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); line-height: 1.7; overflow-x: auto;
+}
+.results-section h2 { /* 기존 값 유지 + 색상 변수 */ color: var(--accent-coral); text-align: left; margin-bottom: 1.5rem; font-size: 1.5em; border: none; }
+.results-section pre { /* 기존 값 유지 + 색상 변수 */ background-color: var(--content-background); border: 1px solid var(--border-color-light, #dee2e6); border-radius: 6px; padding: 15px; font-size: 0.95em; color: var(--text-deep-brown); }
+/* Result item styling (if used) */
+.result-item { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px dashed var(--border-color-light, #dee2e6); }
+.result-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.result-item h3 { font-size: 1.2em; color: var(--accent-deep-blue); margin-top: 0; margin-bottom: 0.5rem; text-align: left; }
+.result-item p { margin-bottom: 0.5rem; font-size: 1em; color: var(--text-secondary-brown); }
+.result-item strong { font-weight: var(--font-weight-bold); color: var(--text-deep-brown); }
+
+/* Language Selector */
+.language-selector { /* 기존 값 유지 */ font-size: 0.9em; }
+.language-selector label { /* 기존 값 유지 + 색상 변경 */ margin-right: 0.5em; font-weight: normal; color: var(--text-secondary-brown); font-size: 1em; }
+.language-selector select { /* 기존 값 유지 */ padding: 5px 8px; font-size: 1em; border-radius: 4px; border: 1px solid var(--border-color-light, #ccc); background-color: var(--content-background); margin-left: 0.3em; cursor: pointer; }
+
+/* Home Page Specifics */
+.home-page .welcome-section { text-align: center; margin-bottom: 3rem; max-width: 600px; }
+.home-page .welcome-section h1 { border-bottom: none; font-size: 2.2rem; /* Slightly smaller than previous adjusted example */ margin-bottom: 1rem;}
+.home-page .welcome-section .description { font-size: 1.1rem; color: var(--text-secondary-brown); line-height: 1.8; }
+.home-page .diagnosis-options { width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 2rem; }
+.home-page .button-group { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+.home-page .diagnosis-button { min-width: 220px; padding: 12px 24px; /* Consistent padding */ font-size: 1.05em; } /* Adjusted home page button size */

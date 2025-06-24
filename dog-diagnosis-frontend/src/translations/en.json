@@ -1,0 +1,390 @@
+{
+  "common": {
+    "language": "Language:",
+    "loading": "Loading...",
+    "submitting": "Submitting...",
+    "analyzing": "Analyzing...",
+    "errorPrefix": "Error:",
+    "genericError": "An unexpected error occurred. Please try again later.",
+    "apiError": "Failed to get analysis. Please check the details and try again.",
+    "requiredField": "(Required)",
+    "selectOption": "Select...",
+    "yes": "Yes",
+    "no": "No",
+    "notProvided": "Not Sure/Provided",
+    "unknown": "Unknown",
+    "notTriedUnknown": "Not Tried/Unknown",
+    "good": "Good/Effective",
+    "partial": "Partial Effect",
+    "none": "No Effect",
+    "resolved": "Resolved",
+    "improvedRecurred": "Improved but recurred",
+    "noImprovement": "No improvement",
+    "exampleFrequency": "e.g., Monthly, Every 3 months",
+    "exampleDate": "e.g., 2023-10-25, Last week"
+  },
+  "homePage": {
+    "welcome": "Welcome to the Pet Diagnosis Helper",
+    "description": "Please select the type of diagnosis you need or change the language.",
+    "skinButton": "Start Skin Diagnosis",
+    "digestiveButton": "Start Digestive Diagnosis"
+  },
+  "disclaimer": {
+    "title": "Important Disclaimer:",
+    "line1": "This tool provides AI-generated suggestions based solely on the information you provide. It is **NOT** a substitute for a professional veterinary diagnosis.",
+    "line2": "Symptoms can overlap between different conditions, and a thorough examination by a qualified veterinarian, potentially including diagnostic tests, is essential for an accurate diagnosis and appropriate treatment plan. Always consult your veterinarian regarding your pet's health concerns."
+  },
+  "skinDiagnosisPage": {
+    "title": "Skin Diagnosis Questionnaire",
+    "description": "Please answer the following questions about your dog's skin condition as accurately as possible.",
+    "getAnalysisButton": "Get Analysis",
+    "resultsTitle": "Analysis Results (AI Suggestions)",
+    "sections": {
+      "basicInfo": "Basic Information",
+      "mainComplaintHistory": "Main Complaint & History",
+      "itchiness": "Itchiness (Pruritus)",
+      "lesionCharacteristics": "Lesion Characteristics",
+      "environmentManagement": "Environment & Management",
+      "diet": "Diet",
+      "parasiteControl": "Parasite Control",
+      "contagion": "Contagion",
+      "generalHealth": "General Health",
+      "previousTreatment": "Previous Treatment for This Issue"
+    },
+    "labels": {
+      "breed": "Breed:",
+      "age": "Age:",
+      "sex": "Sex:",
+      "male": "Male",
+      "female": "Female",
+      "neutered": "Neutered/Spayed?:",
+      "neuteredOptions": [
+        { "value": "Yes", "label": "Yes" },
+        { "value": "No", "label": "No" },
+        { "value": "Not Provided", "label": "Not Sure/Provided" }
+      ],
+      "mainComplaint": "Primary Problem (e.g., itching, hair loss, rash):",
+      "firstNoticed": "When did you first notice the problem?",
+      "firstNoticedPlaceholder": "e.g., 2 weeks ago, last summer",
+      "onsetSpeed": "Onset Speed?:",
+      "onsetSpeedOptions": [
+        { "value": "Sudden", "label": "Sudden" },
+        { "value": "Gradual", "label": "Gradual" }
+      ],
+      "initialLocation": "Where on the body did it start?",
+      "currentLocation": "Where are the symptoms currently located?",
+      "spread": "Has it spread?",
+      "symmetry": "Are the affected areas symmetrical?",
+      "symmetryOptions": [
+        { "value": "Yes", "label": "Yes (Symmetrical)" },
+        { "value": "No", "label": "No (Asymmetrical)" }
+      ],
+      "previousIssues": "Previous similar skin issues?",
+      "seasonality": "Does it seem seasonal?",
+      "progress": "Overall progress?",
+      "progressOptions": [
+        { "value": "Worsening", "label": "Worsening" },
+        { "value": "Stable", "label": "Stable" },
+        { "value": "Improving", "label": "Improving" }
+      ],
+      "isItchy": "Is the dog itchy?",
+      "pruritusScore": "Itchiness Score (1=None, 10=Severe, constant):",
+      "itchMethod": "How does the dog show itchiness? (Select all that apply)",
+      "itchMethodOptions": [
+        { "value": "Scratching (Paws)", "label": "Scratching (Paws)" },
+        { "value": "Licking", "label": "Licking" },
+        { "value": "Chewing/Biting", "label": "Chewing/Biting" },
+        { "value": "Rubbing on surfaces", "label": "Rubbing on surfaces" },
+        { "value": "Shaking head", "label": "Head Shaking" }
+      ],
+      "itchLocation": "Where does the dog itch the most?",
+      "itchLesionOnset": "Which started first, itch or skin changes?",
+      "itchLesionOnsetOptions": [
+        { "value": "Itch First", "label": "Itch started first" },
+        { "value": "Lesions First", "label": "Skin changes appeared first" },
+        { "value": "Same Time", "label": "Both started together" },
+        { "value": "Not Sure", "label": "Not Sure" }
+      ],
+      "pastItchMedication": "Response to past itch medication (if tried):",
+      "steroids": "Steroids (e.g., Prednisone)",
+      "apoquelCytopoint": "Apoquel / Cytopoint",
+      "responseOptions": [
+        { "value": "Good", "label": "Good/Effective" },
+        { "value": "Partial", "label": "Partial Effect" },
+        { "value": "None", "label": "No Effect" },
+        { "value": "Unknown", "label": "Not Tried/Unknown" }
+      ],
+      "lesionTypes": "What do the skin lesions look like? (Select all that apply)",
+      "lesionTypeOptions": [
+        { "value": "Redness (Erythema)", "label": "Redness (Erythema)" },
+        { "value": "Bumps (Papules)", "label": "Bumps (Papules)" },
+        { "value": "Pimples/Pustules", "label": "Pimples/Pustules" },
+        { "value": "Hair Loss (Alopecia)", "label": "Hair Loss (Alopecia)" },
+        { "value": "Scales/Dandruff", "label": "Scales/Dandruff" },
+        { "value": "Crusts/Scabs", "label": "Crusts/Scabs" },
+        { "value": "Thickened Skin (Lichenification)", "label": "Thickened Skin (Lichenification)" },
+        { "value": "Darkened Skin (Hyperpigmentation)", "label": "Darkened Skin (Hyperpigment.)" }, 
+        { "value": "Sores/Ulcers", "label": "Sores/Ulcers" },
+        { "value": "Greasy Skin/Coat", "label": "Greasy Skin/Coat" },
+        { "value": "Lumps/Masses", "label": "Lumps/Masses" },
+        { "value": "Circular Lesions (Ringworm-like)", "label": "Circular Lesions (Ringworm-like)" }
+      ],
+      "skinTexture": "Describe skin texture if unusual (e.g., dry, oily, bumpy):",
+      "odor": "Is there an unusual odor from the skin?",
+      "indoorOutdoor": "Primary Living Area:",
+      "indoorOutdoorOptions": [
+        { "value": "Indoor", "label": "Indoor" },
+        { "value": "Outdoor", "label": "Outdoor" },
+        { "value": "Both", "label": "Both Indoor/Outdoor" }
+      ],
+      "walkEnvironment": "Typical Walking/Exercise Surfaces (e.g., grass, pavement, dirt):",
+      "envChanges": "Any recent changes in environment (new home, new detergents, new furniture/carpets)?",
+      "groomingFreq": "Grooming/Bathing Frequency:",
+      "shampoo": "Shampoo/Conditioner Used:",
+      "bedding": "Type of Bedding Material and Cleaning Frequency:",
+      "contactIrritants": "Potential contact with irritants (plants, chemicals, materials)?",
+      "yesNoPossiblyOptions": [
+        { "value": "Yes", "label": "Yes" },
+        { "value": "No", "label": "No" },
+        { "value": "Possibly", "label": "Possibly/Not Sure" }
+      ],
+      "mainFood": "Current Main Food (Brand & Product Name):",
+      "foodSince": "How long on this main food?",
+      "foodSincePlaceholder": "e.g., 6 months, since puppy",
+      "treats": "Treats, Human Food, Chews, Supplements (List all):",
+      "dietChange": "Any new foods/treats in the last 1-2 months?",
+      "rxDietTrial": "Tried a prescription/elimination diet trial before?",
+      "giSymptoms": "Any concurrent vomiting or diarrhea?",
+      "parasiteControlActive": "Regular Flea/Tick/Mite Prevention Used?",
+      "parasiteProduct": "Prevention Product Name(s):",
+      "parasiteFrequency": "How often is it applied/given?",
+      "parasiteLastDate": "Last Application/Dose Date:",
+      "fleaTickSeen": "Seen fleas or ticks on the dog or in the environment recently?",
+      "otherPetsAffected": "Are other pets in the household showing similar signs?",
+      "humansAffected": "Are any humans in the household experiencing new skin issues (rash, itch)?",
+      "otherSymptoms": "Any other symptoms (lethargy, appetite change, increased thirst/urination, cough, lameness)?",
+      "preexistingConditions": "Any known pre-existing health conditions (e.g., allergies, thyroid issues, Cushing's)?",
+      "currentMeds": "Currently taking any medications or supplements (other than parasite prevention)?",
+      "vaccinationStatus": "Vaccination Status:",
+      "vaccinationOptions": [
+        { "value": "Up to date", "label": "Up to date" },
+        { "value": "Overdue", "label": "Overdue" },
+        { "value": "Unknown", "label": "Unknown" }
+      ],
+      "prevVetVisit": "Visited a vet for this specific skin problem before?",
+      "prevTests": "Tests performed previously for this skin issue:",
+      "prevTestsPlaceholder": "e.g., Skin scrape, cytology, culture, biopsy, allergy test",
+      "prevTreatments": "Treatments tried previously for this skin issue:",
+      "prevTreatmentsPlaceholder": "e.g., Antibiotics, antifungals, steroids, special shampoos, diet change",
+      "prevResponse": "Response to previous treatment?",
+      "prevResponseOptions": [
+        { "value": "Good", "label": "Resolved" },
+        { "value": "Partial", "label": "Improved but recurred" },
+        { "value": "None", "label": "No improvement" },
+        { "value": "Unknown", "label": "Unknown" }
+      ],
+      "yesNoOptions": [
+        { "value": "Yes", "label": "Yes" },
+        { "value": "No", "label": "No" }
+      ]
+    }
+  },
+  "digestiveDiagnosisPage": {
+    "title": "Digestive Disorder Questionnaire",
+    "description": "Please answer the following questions about your dog's digestive symptoms as accurately as possible.",
+    "getAnalysisButton": "Get Analysis",
+    "resultsTitle": "Analysis Results (AI Suggestions)",
+    "sections": {
+      "basicInfo": "Basic Information",
+      "mainComplaintHistory": "Main Complaint & History",
+      "diet": "Diet (Very Important)",
+      "vomiting": "Vomiting",
+      "diarrhea": "Diarrhea",
+      "appetiteThirst": "Appetite & Thirst",
+      "otherGISymptoms": "Other Digestive Symptoms",
+      "generalCondition": "General Condition",
+      "environmentManagement": "Environment & Management",
+      "previousTreatment": "Previous Treatment for This Issue"
+    },
+    "labels": {
+      "breed": "Breed:",
+      "age": "Age:",
+      "sex": "Sex:",
+      "male": "Male",
+      "female": "Female",
+      "neutered": "Neutered/Spayed?:",
+      "neuteredOptions": [
+        { "value": "Yes", "label": "Yes" },
+        { "value": "No", "label": "No" },
+        { "value": "Not Provided", "label": "Not Sure/Provided" }
+      ],
+      "weightInfo": "Current Weight & Recent Changes:",
+      "weightInfoPlaceholder": "e.g., 10kg, lost 1kg in last month",
+      "mainComplaint": "Primary Problem (e.g., Vomiting, Diarrhea, Not Eating):",
+      "firstNoticed": "When did you first notice the problem?",
+      "firstNoticedPlaceholder": "e.g., 3 days ago, yesterday morning",
+      "onsetSpeed": "Onset Speed?:",
+      "onsetSpeedOptions": [
+         { "value": "Sudden", "label": "Sudden (Acute)" },
+         { "value": "Gradual", "label": "Gradual (Chronic)" }
+      ],
+      "symptomPattern": "Symptom Pattern?:",
+      "symptomPatternOptions": [
+        { "value": "Continuous", "label": "Continuous" },
+        { "value": "Intermittent", "label": "Intermittent (Comes and goes)" }
+      ],
+      "progress": "Overall progress?",
+      "progressOptions": [
+        { "value": "Worsening", "label": "Worsening" },
+        { "value": "Stable", "label": "Stable" },
+        { "value": "Improving", "label": "Improving" }
+      ],
+      "previousIssues": "Previous similar digestive issues?",
+      "mainFood": "Current Main Food (Brand & Product Name):",
+      "foodSince": "How long on this main food?",
+      "foodSincePlaceholder": "e.g., 6 months, since puppy",
+      "treats": "Treats, Human Food, Chews, Supplements (List all):",
+      "dietChange": "Any new foods/treats in the last 1-2 weeks?",
+      "eatingHabits": "Typical Eating Habits?:",
+      "eatingHabitsOptions": [
+        { "value": "Normal", "label": "Normal" },
+        { "value": "Voracious", "label": "Voracious (Eats fast/a lot)" },
+        { "value": "Picky", "label": "Picky / Slow Eater" }
+      ],
+      "scavenging": "Does the dog scavenge (eat trash, things off ground)?",
+      "toyIngestion": "Could the dog have swallowed part of a toy or foreign object?",
+      "toxinExposure": "Could the dog have ingested potential toxins (plants, chemicals, human meds)?",
+      "yesNoPossiblyOptions": [
+        { "value": "Yes", "label": "Yes" },
+        { "value": "No", "label": "No" },
+        { "value": "Possibly", "label": "Possibly/Not Sure" }
+      ],
+      "isVomiting": "Is the dog vomiting?",
+      "vomitFrequency": "How often is the dog vomiting?",
+      "vomitFrequencyPlaceholder": "e.g., twice today, once every few days",
+      "vomitTiming": "When does vomiting typically occur?",
+      "vomitTimingOptions": [
+         { "value": "Soon after eating", "label": "Soon after eating" },
+         { "value": "Hours after eating", "label": "Hours after eating" },
+         { "value": "Empty stomach (e.g., morning)", "label": "Empty stomach (e.g., morning)" },
+         { "value": "Variable", "label": "Variable / No pattern" }
+      ],
+      "vomitContents": "What is in the vomit? (Select all that apply)",
+      "vomitContentsOptions": [
+        { "value": "Undigested food", "label": "Undigested food" },
+        { "value": "Partially digested food", "label": "Partially digested food" },
+        { "value": "Clear liquid/Saliva", "label": "Clear liquid/Saliva" },
+        { "value": "Yellow liquid (Bile)", "label": "Yellow liquid (Bile)" },
+        { "value": "White foam", "label": "White foam" },
+        { "value": "Bright red blood", "label": "Bright red blood" },
+        { "value": "Dark blood (Coffee grounds)", "label": "Dark blood (Coffee grounds)" },
+        { "value": "Foreign material", "label": "Foreign material" }
+      ],
+      "vomitEffort": "Does the dog seem to put effort into vomiting (heaving)?",
+      "vomitEffortOptions": [
+        { "value": "Yes", "label": "Yes (Heaving/Abdominal Effort)" },
+        { "value": "No", "label": "No (Seems effortless - Regurgitation)" }
+      ],
+      "isDiarrhea": "Does the dog have diarrhea?",
+      "diarrheaFrequency": "How many times per day is the dog having diarrhea?",
+      "diarrheaFrequencyPlaceholder": "e.g., 5 times today, 3 times per day for 2 days",
+      "diarrheaConsistency": "What does the diarrhea look like? (Select all that apply)",
+      "diarrheaConsistencyOptions": [
+        { "value": "Watery", "label": "Watery" },
+        { "value": "Pasty / Porridge-like", "label": "Pasty / Porridge-like" },
+        { "value": "Mucus present", "label": "Mucus present" },
+        { "value": "Bright red blood", "label": "Bright red blood (Hematochezia)" },
+        { "value": "Black / Tarry stool", "label": "Black / Tarry stool (Melena)" },
+        { "value": "Greasy / Oily", "label": "Greasy / Oily" },
+        { "value": "Unusual color (grey, green)", "label": "Unusual color (grey, green)" }
+      ],
+      "diarrheaStraining": "Is the dog straining to defecate (tenesmus)?",
+      "diarrheaAccidents": "Are there accidents in the house?",
+      "diarrheaOdor": "Is the odor unusually foul?",
+      "diarrheaOdorOptions": [
+         { "value": "Normal", "label": "Normal" },
+         { "value": "Very Foul", "label": "Much worse than usual" }
+      ],
+      "appetite": "Current Appetite?",
+      "appetiteOptions": [
+        { "value": "Normal", "label": "Normal" },
+        { "value": "Decreased", "label": "Decreased" },
+        { "value": "Absent", "label": "Absent (Not eating)" },
+        { "value": "Increased", "label": "Increased" }
+      ],
+      "thirst": "Water Intake?",
+      "thirstOptions": [
+        { "value": "Normal", "label": "Normal" },
+        { "value": "Increased", "label": "Increased (Drinking more)" },
+        { "value": "Decreased", "label": "Decreased (Drinking less)" }
+      ],
+      "borborygmi": "Loud gut sounds (Gurgling)?",
+      "borborygmiOptions": [
+         { "value": "Yes", "label": "Yes (Loud/Frequent)" },
+         { "value": "No", "label": "No / Normal" }
+      ],
+      "abdominalPain": "Signs of abdominal pain?",
+      "abdominalPainOptions": [
+        { "value": "Yes", "label": "Yes (Sensitive to touch, hunched, prayer pose)" },
+        { "value": "No", "label": "No" },
+        { "value": "Not Sure", "label": "Not Sure" }
+      ],
+      "flatulence": "Increased gas (Flatulence)?",
+      "flatulenceOptions": [
+        { "value": "Yes", "label": "Yes (More than usual)" },
+        { "value": "No", "label": "No / Normal" }
+      ],
+      "lipSmackingDrooling": "Increased lip smacking or drooling?",
+      "lethargy": "Is the dog lethargic?",
+      "lethargyOptions": [
+        { "value": "Yes", "label": "Yes (Less energy, sleeping more)" },
+        { "value": "No", "label": "No (Normal energy)" }
+      ],
+      "fever": "Does the dog seem to have a fever?",
+      "feverOptions": [
+         { "value": "Yes", "label": "Yes (Feels warm)" },
+         { "value": "No", "label": "No" },
+         { "value": "Not Sure", "label": "Not Sure" }
+      ],
+      "gumColor": "Gum Color:",
+      "gumColorOptions": [
+        { "value": "Pink", "label": "Pink (Normal)" },
+        { "value": "Pale", "label": "Pale / White" },
+        { "value": "Yellow", "label": "Yellow (Jaundice)" },
+        { "value": "Purple/Blue", "label": "Purple/Blue (Cyanotic)" },
+        { "value": "Not Sure", "label": "Not Sure" }
+      ],
+      "dewormingStatus": "Deworming Status (Internal Parasites):",
+      "dewormingPlaceholder": "e.g., Yes, last month with Drontal; No",
+      "vaccinationStatus": "Vaccination Status (esp. Parvo/Distemper)?",
+      "vaccinationOptions": [
+        { "value": "Up to date", "label": "Up to date" },
+        { "value": "Overdue", "label": "Overdue" },
+        { "value": "Unknown", "label": "Unknown" }
+      ],
+      "recentStress": "Any recent stressful events (boarding, move, new pet)?",
+      "otherPetsAffected": "Are other pets in the household showing similar signs?",
+      "prevVetVisit": "Visited a vet for this specific problem before?",
+      "prevTests": "Tests performed previously:",
+      "prevTestsPlaceholder": "e.g., X-rays, bloodwork, fecal exam",
+      "prevTreatments": "Treatments tried previously:",
+      "prevTreatmentsPlaceholder": "e.g., Medications (name if known), fluid therapy, diet change",
+      "prevResponse": "Response to previous treatment?",
+      "prevResponseOptions": [
+        { "value": "Good", "label": "Resolved" },
+        { "value": "Partial", "label": "Improved but recurred" },
+        { "value": "None", "label": "No improvement" },
+        { "value": "Unknown", "label": "Unknown" }
+      ],
+      "yesNoOptions": [ 
+        { "value": "Yes", "label": "Yes" },
+        { "value": "No", "label": "No" }
+      ]
+    }
+  },
+  "notFoundPage": {
+    "title": "404 - Page Not Found",
+    "message": "The page you are looking for does not exist.",
+    "goHome": "Go to Home Page"
+  }
+}
