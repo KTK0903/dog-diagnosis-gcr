@@ -1,0 +1,32 @@
+steps:
+# 1단계: Docker 이미지 빌드
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+    'build',
+    '--platform',
+    'linux/amd64',
+    '-t',
+    'asia-northeast1-docker.pkg.dev/possible-willow-463804-p9/docker-repo/dog-diagnosis-fullstack',
+    '.'
+  ]
+
+# 2단계: 빌드된 이미지를 Artifact Registry에 푸시
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'asia-northeast1-docker.pkg.dev/possible-willow-463804-p9/docker-repo/dog-diagnosis-fullstack']
+
+# 3단계: 새로운 이미지로 Cloud Run에 배포
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - 'dog-diagnosis-service'
+  - '--image=asia-northeast1-docker.pkg.dev/possible-willow-463804-p9/docker-repo/dog-diagnosis-fullstack'
+  - '--region=asia-northeast1'
+  - '--platform=managed'
+  - '--allow-unauthenticated'
+  - '--set-secrets=GEMINI_API_KEY=GEMINI_API_KEY:latest'
+
+# 빌드된 이미지를 명시
+images:
+- 'asia-northeast1-docker.pkg.dev/possible-willow-463804-p9/docker-repo/dog-diagnosis-fullstack'
