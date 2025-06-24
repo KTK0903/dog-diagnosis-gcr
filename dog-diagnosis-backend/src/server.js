@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
-const frontendDistPath = path.join(__dirname, '..', '..', 'dog-diagnosis-frontend', 'dist');
+const frontendDistPath = path.resolve('/usr/src/app/dog-diagnosis-frontend/dist');
 app.use(express.static(frontendDistPath));
 
 // API 라우트
